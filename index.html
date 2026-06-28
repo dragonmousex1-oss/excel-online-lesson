@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บทเรียนออนไลน์: การใช้งาน Microsoft Excel</title>
+    <title>บทเรียนออนไลน์: การใช้งาน Microsoft Excel | ครูธีพงษ์ เขาทอง</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header - Apple Style -->
+    <!-- Header - Apple Style Navigation -->
     <header class="main-header">
         <div class="container header-inner">
-            <div class="logo">
+            <a class="logo" onclick="navigateToLesson('home')">
                 <span class="logo-icon">📊</span>
-                <span class="logo-text">บทเรียน Excel</span>
-            </div>
+                <span class="logo-text">Excel Lesson</span>
+            </a>
             <nav class="main-nav">
                 <button class="nav-btn active" data-lesson="home">หน้าหลัก</button>
                 <button class="nav-btn" data-lesson="1">บทที่ 1</button>
@@ -25,18 +25,15 @@
                 <button class="nav-btn" data-lesson="4">บทที่ 4</button>
                 <button class="nav-btn" data-lesson="5">บทที่ 5</button>
             </nav>
-            <span class="header-author">ครูธีพงษ์ เขาทอง</span>
+            <button class="theme-toggle" onclick="toggleTheme()" title="สลับโหมดมืด/สว่าง">🌙</button>
         </div>
     </header>
 
-
-    <!-- Progress Bar -->
+    <!-- Progress -->
     <div class="progress-container">
-        <div class="container">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-            <span class="progress-text" id="progressText">ความคืบหน้า: 0%</span>
+        <div class="container progress-inner">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <span class="progress-text" id="progressText">0 / 5 บท</span>
         </div>
     </div>
 
@@ -45,1098 +42,1467 @@
         <div class="container">
 
 
-            <!-- Home Section -->
+            <!-- ==================== HOME ==================== -->
             <section class="lesson-section active" id="home">
-                <div class="hero-section">
-                    <h2>ยินดีต้อนรับสู่บทเรียน Microsoft Excel</h2>
-                    <p class="hero-desc">เรียนรู้การใช้งาน Excel ตั้งแต่พื้นฐานจนถึงการประยุกต์ใช้จริง เหมาะสำหรับนักเรียนมัธยมศึกษาที่ต้องการพัฒนาทักษะด้านเทคโนโลยี</p>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>วัตถุประสงค์</h3>
-                        <ul>
-                            <li>เข้าใจหลักการทำงานของ Excel</li>
-                            <li>สามารถจัดการข้อมูลได้อย่างมีประสิทธิภาพ</li>
-                            <li>ใช้สูตรและฟังก์ชันในการคำนวณ</li>
-                            <li>สร้างกราฟและนำเสนอข้อมูล</li>
-                            <li>ประยุกต์ใช้กับงานจริงในการเรียน</li>
-                        </ul>
+                <!-- Hero -->
+                <div class="hero">
+                    <div class="hero-badge">สำหรับนักเรียนมัธยมศึกษา</div>
+                    <h1 class="hero-title">เรียนรู้ <span class="text-gradient">Microsoft Excel</span><br>ตั้งแต่เริ่มต้นจนใช้งานได้จริง</h1>
+                    <p class="hero-desc">พัฒนาทักษะการใช้ Spreadsheet อย่างมืออาชีพ ผ่าน 5 บทเรียนที่ออกแบบมาเพื่อนักเรียนโดยเฉพาะ พร้อมตัวอย่างที่ใช้ได้จริงในชีวิตการเรียน</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="navigateToLesson('1')">เริ่มเรียนเลย →</button>
+                        <button class="btn-secondary" onclick="navigateToLesson('5')">ดูโปรเจกต์ตัวอย่าง</button>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📚</div>
-                        <h3>เนื้อหาบทเรียน</h3>
-                        <ul>
-                            <li>บทที่ 1: รู้จักกับ Microsoft Excel</li>
-                            <li>บทที่ 2: การจัดการข้อมูล</li>
-                            <li>บทที่ 3: สูตรและฟังก์ชัน</li>
-                            <li>บทที่ 4: การสร้างกราฟ</li>
-                            <li>บทที่ 5: การประยุกต์ใช้กับการเรียน</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✅</div>
-                        <h3>สิ่งที่จะได้รับ</h3>
-                        <ul>
-                            <li>เนื้อหาอธิบายเข้าใจง่าย</li>
-                            <li>ตัวอย่างที่ใช้ได้จริง</li>
-                            <li>แบบฝึกหัดท้ายบท</li>
-                            <li>เทคนิคลัดที่มีประโยชน์</li>
-                            <li>โปรเจกต์ฝึกปฏิบัติ</li>
-                        </ul>
+                    <div class="hero-visual">
+                        <div class="hero-illustration">
+                            <div class="excel-mock">
+                                <div class="excel-mock-header">
+                                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                                    <span class="mock-title">คะแนนสอบกลางภาค.xlsx</span>
+                                </div>
+                                <div class="excel-mock-body">
+                                    <div class="mock-row mock-header-row">
+                                        <span>ชื่อ</span><span>คณิต</span><span>วิทย์</span><span>อังกฤษ</span><span>รวม</span>
+                                    </div>
+                                    <div class="mock-row"><span>สมชาย</span><span>85</span><span>78</span><span>92</span><span class="formula">=SUM(B2:D2)</span></div>
+                                    <div class="mock-row"><span>สมหญิง</span><span>90</span><span>88</span><span>85</span><span class="formula">=SUM(B3:D3)</span></div>
+                                    <div class="mock-row"><span>มานะ</span><span>76</span><span>95</span><span>80</span><span class="formula">=SUM(B4:D4)</span></div>
+                                    <div class="mock-row mock-footer"><span>เฉลี่ย</span><span class="formula">=AVG</span><span class="formula">=AVG</span><span class="formula">=AVG</span><span class="formula">=AVG</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="start-section">
-                    <button class="btn-start" onclick="navigateToLesson('1')">เริ่มเรียนบทที่ 1 →</button>
+                <!-- Stats -->
+                <div class="stats-row">
+                    <div class="stat-card"><div class="stat-icon">📖</div><div class="stat-number">5</div><div class="stat-label">บทเรียน</div></div>
+                    <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-number">15</div><div class="stat-label">แบบฝึกหัด</div></div>
+                    <div class="stat-card"><div class="stat-icon">💻</div><div class="stat-number">5</div><div class="stat-label">โปรเจกต์จริง</div></div>
+                    <div class="stat-card"><div class="stat-icon">⏱️</div><div class="stat-number">~3</div><div class="stat-label">ชั่วโมง</div></div>
+                </div>
+
+                <!-- Course Overview -->
+                <div class="section-header">
+                    <h2>เนื้อหาที่จะได้เรียน</h2>
+                    <p>ครอบคลุมทุกทักษะที่จำเป็นสำหรับการใช้ Excel ในชีวิตการเรียน</p>
+                </div>
+
+                <div class="course-grid">
+                    <div class="course-card" onclick="navigateToLesson('1')">
+                        <div class="course-num">01</div>
+                        <div class="course-icon">🖥️</div>
+                        <h3>รู้จักกับ Microsoft Excel</h3>
+                        <p>ทำความรู้จักส่วนประกอบทั้งหมด เรียนรู้ Keyboard Shortcuts และเริ่มต้นใช้งาน</p>
+                        <ul class="course-topics"><li>ส่วนประกอบของ Excel</li><li>Workbook, Worksheet, Cell</li><li>Ribbon และ Formula Bar</li><li>Keyboard Shortcuts สำคัญ</li></ul>
+                    </div>
+                    <div class="course-card" onclick="navigateToLesson('2')">
+                        <div class="course-num">02</div>
+                        <div class="course-icon">📋</div>
+                        <h3>การจัดการข้อมูล</h3>
+                        <p>ป้อนข้อมูล จัดรูปแบบ เรียงลำดับ และกรองข้อมูลอย่างมืออาชีพ</p>
+                        <ul class="course-topics"><li>ชนิดข้อมูล 4 แบบ</li><li>การจัดรูปแบบ (Formatting)</li><li>Sort & Filter</li><li>Conditional Formatting</li></ul>
+                    </div>
+                    <div class="course-card" onclick="navigateToLesson('3')">
+                        <div class="course-num">03</div>
+                        <div class="course-icon">🧮</div>
+                        <h3>สูตรและฟังก์ชัน</h3>
+                        <p>เรียนรู้สูตรคำนวณตั้งแต่พื้นฐานจนถึง IF, VLOOKUP ขั้นสูง</p>
+                        <ul class="course-topics"><li>เครื่องหมายคำนวณ</li><li>SUM, AVERAGE, MAX, MIN</li><li>COUNT, COUNTIF, IF</li><li>VLOOKUP & Cell Reference</li></ul>
+                    </div>
+                    <div class="course-card" onclick="navigateToLesson('4')">
+                        <div class="course-num">04</div>
+                        <div class="course-icon">📊</div>
+                        <h3>การสร้างกราฟ</h3>
+                        <p>เลือกชนิดกราฟที่เหมาะสม สร้าง และปรับแต่งให้สวยงามเพื่อนำเสนอ</p>
+                        <ul class="course-topics"><li>กราฟแท่ง เส้น วงกลม</li><li>ขั้นตอนสร้างกราฟ</li><li>ปรับแต่ง Chart Elements</li><li>เลือกกราฟให้เหมาะกับข้อมูล</li></ul>
+                    </div>
+                    <div class="course-card" onclick="navigateToLesson('5')">
+                        <div class="course-num">05</div>
+                        <div class="course-icon">🎓</div>
+                        <h3>ประยุกต์ใช้กับการเรียน</h3>
+                        <p>โปรเจกต์จริง 5 ชิ้น ที่ใช้ได้ทันทีในชีวิตการเรียน</p>
+                        <ul class="course-topics"><li>ตารางบันทึกคะแนน</li><li>ตารางเวลาเรียน</li><li>รายรับ-รายจ่าย</li><li>วิเคราะห์ผลเรียนด้วยกราฟ</li></ul>
+                    </div>
+                </div>
+
+                <!-- Teacher Info -->
+                <div class="teacher-section">
+                    <div class="teacher-card">
+                        <div class="teacher-avatar">👨‍🏫</div>
+                        <div class="teacher-info">
+                            <h3>ครูธีพงษ์ เขาทอง</h3>
+                            <p class="teacher-role">ผู้สอนและผู้พัฒนาบทเรียน</p>
+                            <p class="teacher-desc">บทเรียนนี้ออกแบบมาเพื่อให้นักเรียนระดับมัธยมศึกษาสามารถเรียนรู้และนำ Excel ไปใช้ได้จริง ทั้งในการเรียนและชีวิตประจำวัน</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
 
-            <!-- Lesson 1: รู้จักกับ Excel -->
+            <!-- ==================== LESSON 1 ==================== -->
             <section class="lesson-section" id="lesson1">
-                <div class="lesson-header">
-                    <span class="lesson-number">บทที่ 1</span>
-                    <h2>รู้จักกับ Microsoft Excel</h2>
-                    <p class="lesson-objective">วัตถุประสงค์: นักเรียนสามารถอธิบายส่วนประกอบของ Excel และเริ่มต้นใช้งานได้</p>
+                <div class="lesson-hero">
+                    <div class="lesson-hero-content">
+                        <span class="lesson-badge">บทที่ 1</span>
+                        <h1>รู้จักกับ Microsoft Excel</h1>
+                        <p>ทำความเข้าใจพื้นฐานทั้งหมดของ Excel ก่อนก้าวสู่การใช้งานจริง</p>
+                    </div>
+                    <div class="lesson-hero-icon">🖥️</div>
                 </div>
 
-                <div class="lesson-content">
-                    <div class="content-block">
-                        <h3>📌 Excel คืออะไร?</h3>
-                        <p>Microsoft Excel เป็นโปรแกรมสเปรดชีต (Spreadsheet) ที่ใช้ในการจัดการข้อมูลในรูปแบบตาราง คำนวณ วิเคราะห์ข้อมูล และสร้างกราฟ เป็นหนึ่งในโปรแกรมที่ใช้กันแพร่หลายมากที่สุดในโลก ทั้งในสถานศึกษาและที่ทำงาน</p>
+                <div class="lesson-objectives">
+                    <h3>🎯 เมื่อเรียนจบบทนี้ นักเรียนจะสามารถ</h3>
+                    <div class="objectives-list">
+                        <div class="objective-item"><span class="obj-check">✓</span> อธิบายความหมายและประโยชน์ของ Excel ได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> บอกส่วนประกอบหลักของหน้าจอ Excel ได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> เปิดโปรแกรม สร้างไฟล์ใหม่ และบันทึกไฟล์ได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> ใช้ Keyboard Shortcuts พื้นฐานได้อย่างคล่องแคล่ว</div>
+                    </div>
+                </div>
+
+                <!-- Section: Excel คืออะไร -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">💡</span>
+                        <h2>Excel คืออะไร?</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead-text">Microsoft Excel เป็นโปรแกรม <strong>Spreadsheet (สเปรดชีต)</strong> ที่ใช้ในการจัดการข้อมูลในรูปแบบตาราง คำนวณ วิเคราะห์ข้อมูล และสร้างกราฟ</p>
                         
-                        <div class="highlight-box">
-                            <h4>💡 ทำไมต้องเรียน Excel?</h4>
-                            <ul>
-                                <li><strong>ใช้ในการเรียน:</strong> คำนวณคะแนน จัดตารางสอบ ทำรายงาน</li>
-                                <li><strong>ใช้ในชีวิตประจำวัน:</strong> จัดการรายรับ-รายจ่าย วางแผนงาน</li>
-                                <li><strong>ใช้ในอนาคต:</strong> เป็นทักษะสำคัญในการทำงานทุกสาขาอาชีพ</li>
-                            </ul>
+                        <div class="info-banner">
+                            <div class="info-banner-icon">📌</div>
+                            <div class="info-banner-content">
+                                <strong>คำว่า Spreadsheet</strong> มาจาก Spread (กระจาย) + Sheet (แผ่น) หมายถึงแผ่นกระดาษที่มีข้อมูลกระจายเป็นตาราง เหมือนกระดาษตารางที่เราใช้ในวิชาคณิตศาสตร์
+                            </div>
+                        </div>
+
+                        <p>Excel เป็นหนึ่งในโปรแกรมที่ใช้กันแพร่หลายมากที่สุดในโลก ทั้งในสถานศึกษาและสถานที่ทำงาน มีผู้ใช้งานมากกว่า 750 ล้านคนทั่วโลก สามารถทำงานได้หลากหลาย เช่น:</p>
+                        
+                        <div class="use-cases-grid">
+                            <div class="use-case">
+                                <div class="use-case-icon">🏫</div>
+                                <h4>ในการเรียน</h4>
+                                <ul>
+                                    <li>บันทึกและคำนวณคะแนนสอบ</li>
+                                    <li>จัดทำตารางเรียน</li>
+                                    <li>ทำรายงานพร้อมกราฟ</li>
+                                    <li>วิเคราะห์ข้อมูลโครงงาน IS</li>
+                                </ul>
+                            </div>
+                            <div class="use-case">
+                                <div class="use-case-icon">🏠</div>
+                                <h4>ในชีวิตประจำวัน</h4>
+                                <ul>
+                                    <li>จัดการรายรับ-รายจ่าย</li>
+                                    <li>วางแผนการออมเงิน</li>
+                                    <li>ทำรายการสิ่งของ</li>
+                                    <li>จัดตาราง To-Do List</li>
+                                </ul>
+                            </div>
+                            <div class="use-case">
+                                <div class="use-case-icon">💼</div>
+                                <h4>ในอนาคต (การทำงาน)</h4>
+                                <ul>
+                                    <li>สร้างรายงานยอดขาย</li>
+                                    <li>วิเคราะห์ข้อมูลธุรกิจ</li>
+                                    <li>จัดทำงบประมาณ</li>
+                                    <li>บริหารจัดการโปรเจกต์</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 ส่วนประกอบหลักของ Excel</h3>
-                        <div class="table-container">
-                            <table class="info-table">
-                                <thead>
-                                    <tr>
-                                        <th>ส่วนประกอบ</th>
-                                        <th>คำอธิบาย</th>
-                                        <th>ตัวอย่างการใช้งาน</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Workbook</strong></td>
-                                        <td>ไฟล์ Excel ทั้งหมด (สมุดงาน)</td>
-                                        <td>ไฟล์ "คะแนนสอบ.xlsx"</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Worksheet</strong></td>
-                                        <td>แผ่นงานแต่ละแผ่น (Sheet)</td>
-                                        <td>Sheet1: คะแนนเทอม 1</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Cell</strong></td>
-                                        <td>เซลล์ (ช่องตัดกันของแถวและคอลัมน์)</td>
-                                        <td>เซลล์ A1, B2, C3</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Row</strong></td>
-                                        <td>แถว (แนวนอน ใช้ตัวเลข)</td>
-                                        <td>แถวที่ 1, 2, 3...</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Column</strong></td>
-                                        <td>คอลัมน์ (แนวตั้ง ใช้ตัวอักษร)</td>
-                                        <td>คอลัมน์ A, B, C...</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Formula Bar</strong></td>
-                                        <td>แถบสูตร สำหรับพิมพ์สูตรคำนวณ</td>
-                                        <td>=SUM(A1:A10)</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Ribbon</strong></td>
-                                        <td>แถบเครื่องมือด้านบน</td>
-                                        <td>แท็บ Home, Insert, Data</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <!-- Section: ส่วนประกอบของ Excel -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">🔍</span>
+                        <h2>ส่วนประกอบของหน้าจอ Excel</h2>
                     </div>
+                    <div class="card-body">
+                        <p>เมื่อเปิด Excel ขึ้นมา จะเห็นส่วนประกอบต่างๆ ดังนี้:</p>
 
-
-                    <div class="content-block">
-                        <h3>📌 การเปิดโปรแกรมและเริ่มต้นใช้งาน</h3>
-                        <div class="steps-container">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <div class="step-content">
-                                    <h4>เปิดโปรแกรม</h4>
-                                    <p>คลิก Start → ค้นหา "Excel" → คลิกเปิดโปรแกรม หรือดับเบิลคลิกไอคอน Excel บนหน้าจอ</p>
+                        <div class="excel-interface-diagram">
+                            <div class="interface-part" data-part="titlebar">
+                                <div class="part-label">① Title Bar</div>
+                                <div class="part-visual titlebar-mock">📊 คะแนนสอบ.xlsx - Excel</div>
+                            </div>
+                            <div class="interface-part" data-part="ribbon">
+                                <div class="part-label">② Ribbon (แถบเครื่องมือ)</div>
+                                <div class="part-visual ribbon-mock">
+                                    <span class="tab active-tab">Home</span>
+                                    <span class="tab">Insert</span>
+                                    <span class="tab">Page Layout</span>
+                                    <span class="tab">Formulas</span>
+                                    <span class="tab">Data</span>
+                                    <span class="tab">View</span>
                                 </div>
                             </div>
-                            <div class="step">
-                                <span class="step-number">2</span>
+                            <div class="interface-part" data-part="formulabar">
+                                <div class="part-label">③ Formula Bar (แถบสูตร)</div>
+                                <div class="part-visual formula-mock">
+                                    <span class="cell-ref">A1</span>
+                                    <span class="fx">fx</span>
+                                    <span class="formula-content">=SUM(B2:B10)</span>
+                                </div>
+                            </div>
+                            <div class="interface-part" data-part="worksheet">
+                                <div class="part-label">④ Worksheet (แผ่นงาน)</div>
+                                <div class="part-visual worksheet-mock">
+                                    <div class="ws-header"><span></span><span>A</span><span>B</span><span>C</span><span>D</span></div>
+                                    <div class="ws-row"><span>1</span><span class="active-cell">ชื่อ</span><span>คะแนน</span><span>เกรด</span><span></span></div>
+                                    <div class="ws-row"><span>2</span><span>สมชาย</span><span>85</span><span>A</span><span></span></div>
+                                    <div class="ws-row"><span>3</span><span>สมหญิง</span><span>72</span><span>B</span><span></span></div>
+                                </div>
+                            </div>
+                            <div class="interface-part" data-part="sheets">
+                                <div class="part-label">⑤ Sheet Tabs</div>
+                                <div class="part-visual sheets-mock">
+                                    <span class="sheet-tab active-sheet">Sheet1</span>
+                                    <span class="sheet-tab">Sheet2</span>
+                                    <span class="sheet-tab">Sheet3</span>
+                                    <span class="add-sheet">+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vocab-grid">
+                            <div class="vocab-card">
+                                <div class="vocab-term">Workbook</div>
+                                <div class="vocab-def">ไฟล์ Excel ทั้งเล่ม (สมุดงาน) มีนามสกุล .xlsx</div>
+                                <div class="vocab-example">เช่น "คะแนนสอบ.xlsx"</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-term">Worksheet</div>
+                                <div class="vocab-def">แผ่นงานแต่ละแผ่น (Sheet) ใน Workbook หนึ่งไฟล์มีได้หลาย Sheet</div>
+                                <div class="vocab-example">เช่น Sheet1 = เทอม 1, Sheet2 = เทอม 2</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-term">Cell (เซลล์)</div>
+                                <div class="vocab-def">ช่องสี่เหลี่ยมที่เกิดจากจุดตัดของ Row กับ Column</div>
+                                <div class="vocab-example">เช่น เซลล์ A1, B3, C10</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-term">Row (แถว)</div>
+                                <div class="vocab-def">แถวแนวนอน ใช้ตัวเลขกำกับ (1, 2, 3...)</div>
+                                <div class="vocab-example">Excel มี 1,048,576 แถว</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-term">Column (คอลัมน์)</div>
+                                <div class="vocab-def">คอลัมน์แนวตั้ง ใช้ตัวอักษรภาษาอังกฤษกำกับ</div>
+                                <div class="vocab-example">A, B, C... Z, AA, AB... (16,384 คอลัมน์)</div>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-term">Range (ช่วง)</div>
+                                <div class="vocab-def">กลุ่มเซลล์ต่อเนื่องกัน ใช้เครื่องหมาย : คั่น</div>
+                                <div class="vocab-example">เช่น A1:A10 หมายถึงเซลล์ A1 ถึง A10</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: วิธีเปิดและเริ่มต้น -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">🚀</span>
+                        <h2>การเปิดโปรแกรมและเริ่มต้นใช้งาน</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="steps-modern">
+                            <div class="step-item">
+                                <div class="step-num">1</div>
+                                <div class="step-content">
+                                    <h4>เปิดโปรแกรม Excel</h4>
+                                    <p>คลิก <kbd>Start</kbd> → พิมพ์ค้นหา "Excel" → คลิกเปิดโปรแกรม</p>
+                                    <div class="step-tip">💡 หรือดับเบิลคลิกที่ไอคอน Excel บน Desktop / Taskbar</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">2</div>
                                 <div class="step-content">
                                     <h4>สร้างไฟล์ใหม่</h4>
-                                    <p>เลือก "Blank Workbook" เพื่อสร้างสมุดงานเปล่า หรือเลือก Template ที่ต้องการ</p>
+                                    <p>หน้าจอ Start Screen จะปรากฏ → เลือก <strong>"Blank Workbook"</strong> เพื่อสร้างสมุดงานเปล่า</p>
+                                    <div class="step-tip">💡 สามารถเลือก Template สำเร็จรูปได้ เช่น ปฏิทิน, งบประมาณ, ตารางงาน</div>
                                 </div>
                             </div>
-                            <div class="step">
-                                <span class="step-number">3</span>
+                            <div class="step-item">
+                                <div class="step-num">3</div>
+                                <div class="step-content">
+                                    <h4>ป้อนข้อมูล</h4>
+                                    <p>คลิกที่เซลล์ที่ต้องการ → พิมพ์ข้อมูล → กด <kbd>Enter</kbd> เพื่อยืนยัน</p>
+                                    <div class="step-tip">💡 กด Tab เพื่อเลื่อนไปคอลัมน์ถัดไป, Enter เลื่อนลงแถวถัดไป</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">4</div>
                                 <div class="step-content">
                                     <h4>บันทึกไฟล์</h4>
-                                    <p>กด Ctrl+S หรือ File → Save As → เลือกที่เก็บ → ตั้งชื่อไฟล์ → Save</p>
+                                    <p>กด <kbd>Ctrl</kbd> + <kbd>S</kbd> → เลือกตำแหน่งที่เก็บ → ตั้งชื่อไฟล์ → กด Save</p>
+                                    <div class="step-tip">💡 ควรบันทึกบ่อยๆ เพื่อป้องกันข้อมูลสูญหาย! แนะนำทุก 5-10 นาที</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 Keyboard Shortcuts ที่ควรรู้</h3>
-                        <div class="shortcuts-grid">
-                            <div class="shortcut-item">
-                                <kbd>Ctrl + S</kbd>
-                                <span>บันทึกไฟล์</span>
+                <!-- Section: Ribbon -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">🎛️</span>
+                        <h2>แท็บ Ribbon ที่ใช้บ่อย</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Ribbon คือแถบเครื่องมือด้านบนที่รวบรวมคำสั่งทั้งหมด แบ่งเป็นแท็บต่างๆ:</p>
+
+                        <div class="ribbon-tabs-grid">
+                            <div class="ribbon-card">
+                                <div class="ribbon-tab-name">🏠 Home</div>
+                                <p>จัดรูปแบบข้อความ ตัวหนา เอียง สี ขนาด Copy/Paste</p>
+                                <div class="ribbon-tools">Font • Alignment • Number • Clipboard</div>
                             </div>
-                            <div class="shortcut-item">
-                                <kbd>Ctrl + C</kbd>
-                                <span>คัดลอก</span>
+                            <div class="ribbon-card">
+                                <div class="ribbon-tab-name">📎 Insert</div>
+                                <p>แทรกกราฟ รูปภาพ ตาราง รูปร่าง กล่องข้อความ</p>
+                                <div class="ribbon-tools">Chart • Table • Illustrations • Sparklines</div>
                             </div>
-                            <div class="shortcut-item">
-                                <kbd>Ctrl + V</kbd>
-                                <span>วาง</span>
+                            <div class="ribbon-card">
+                                <div class="ribbon-tab-name">📐 Page Layout</div>
+                                <p>ตั้งค่าหน้าพิมพ์ ขอบ ทิศทาง ขนาดกระดาษ</p>
+                                <div class="ribbon-tools">Margins • Orientation • Size • Print Area</div>
                             </div>
-                            <div class="shortcut-item">
-                                <kbd>Ctrl + Z</kbd>
-                                <span>ย้อนกลับ</span>
+                            <div class="ribbon-card">
+                                <div class="ribbon-tab-name">🧮 Formulas</div>
+                                <p>แทรกฟังก์ชัน จัดการชื่อ ตรวจสอบสูตร</p>
+                                <div class="ribbon-tools">Insert Function • Name Manager • Formula Auditing</div>
                             </div>
-                            <div class="shortcut-item">
-                                <kbd>Ctrl + B</kbd>
-                                <span>ตัวหนา</span>
+                            <div class="ribbon-card">
+                                <div class="ribbon-tab-name">📊 Data</div>
+                                <p>เรียงลำดับ กรองข้อมูล Data Validation</p>
+                                <div class="ribbon-tools">Sort • Filter • Data Validation • Text to Columns</div>
                             </div>
-                            <div class="shortcut-item">
-                                <kbd>Ctrl + Home</kbd>
-                                <span>กลับเซลล์ A1</span>
+                            <div class="ribbon-card">
+                                <div class="ribbon-tab-name">👁️ View</div>
+                                <p>เปลี่ยนมุมมอง ซูม ตรึงแถว แบ่งหน้าจอ</p>
+                                <div class="ribbon-tools">Zoom • Freeze Panes • Split • Gridlines</div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Quiz บทที่ 1 -->
-                    <div class="quiz-section">
-                        <h3>📝 แบบฝึกหัดท้ายบท</h3>
+                <!-- Section: Keyboard Shortcuts -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">⌨️</span>
+                        <h2>Keyboard Shortcuts ที่ต้องรู้</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>การใช้ปุ่มลัดจะช่วยให้ทำงานเร็วขึ้นมาก! นักเรียนควรจำให้ได้ทุกตัว:</p>
+
+                        <div class="shortcuts-category">
+                            <h4>📁 จัดการไฟล์</h4>
+                            <div class="shortcut-grid">
+                                <div class="shortcut"><kbd>Ctrl + N</kbd><span>สร้างไฟล์ใหม่</span></div>
+                                <div class="shortcut"><kbd>Ctrl + O</kbd><span>เปิดไฟล์</span></div>
+                                <div class="shortcut"><kbd>Ctrl + S</kbd><span>บันทึกไฟล์</span></div>
+                                <div class="shortcut"><kbd>Ctrl + P</kbd><span>พิมพ์ (Print)</span></div>
+                            </div>
+                        </div>
+
+                        <div class="shortcuts-category">
+                            <h4>✂️ แก้ไขข้อมูล</h4>
+                            <div class="shortcut-grid">
+                                <div class="shortcut"><kbd>Ctrl + C</kbd><span>คัดลอก (Copy)</span></div>
+                                <div class="shortcut"><kbd>Ctrl + X</kbd><span>ตัด (Cut)</span></div>
+                                <div class="shortcut"><kbd>Ctrl + V</kbd><span>วาง (Paste)</span></div>
+                                <div class="shortcut"><kbd>Ctrl + Z</kbd><span>ย้อนกลับ (Undo)</span></div>
+                                <div class="shortcut"><kbd>Ctrl + Y</kbd><span>ทำซ้ำ (Redo)</span></div>
+                                <div class="shortcut"><kbd>Delete</kbd><span>ลบข้อมูลในเซลล์</span></div>
+                                <div class="shortcut"><kbd>F2</kbd><span>แก้ไขเซลล์ที่เลือก</span></div>
+                            </div>
+                        </div>
+
+                        <div class="shortcuts-category">
+                            <h4>🎨 จัดรูปแบบ</h4>
+                            <div class="shortcut-grid">
+                                <div class="shortcut"><kbd>Ctrl + B</kbd><span>ตัวหนา (Bold)</span></div>
+                                <div class="shortcut"><kbd>Ctrl + I</kbd><span>ตัวเอียง (Italic)</span></div>
+                                <div class="shortcut"><kbd>Ctrl + U</kbd><span>ขีดเส้นใต้ (Underline)</span></div>
+                            </div>
+                        </div>
+
+                        <div class="shortcuts-category">
+                            <h4>🧭 นำทาง (Navigation)</h4>
+                            <div class="shortcut-grid">
+                                <div class="shortcut"><kbd>Ctrl + Home</kbd><span>ไปเซลล์ A1</span></div>
+                                <div class="shortcut"><kbd>Ctrl + End</kbd><span>ไปเซลล์สุดท้ายที่มีข้อมูล</span></div>
+                                <div class="shortcut"><kbd>Ctrl + ←→↑↓</kbd><span>เลื่อนไปขอบข้อมูล</span></div>
+                                <div class="shortcut"><kbd>Ctrl + A</kbd><span>เลือกทั้งหมด</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz 1 -->
+                <div class="content-card quiz-card">
+                    <div class="card-header">
+                        <span class="card-icon">📝</span>
+                        <h2>แบบฝึกหัดท้ายบทที่ 1</h2>
+                    </div>
+                    <div class="card-body">
                         <div class="quiz-item" data-quiz="1-1">
-                            <p class="quiz-question">1. ส่วนที่ตัดกันระหว่างแถวและคอลัมน์ เรียกว่าอะไร?</p>
+                            <p class="quiz-question">1. ส่วนที่เกิดจากจุดตัดระหว่างแถว (Row) และคอลัมน์ (Column) เรียกว่าอะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q1-1" value="a"> Worksheet</label>
-                                <label><input type="radio" name="q1-1" value="b"> Cell</label>
-                                <label><input type="radio" name="q1-1" value="c"> Workbook</label>
-                                <label><input type="radio" name="q1-1" value="d"> Row</label>
+                                <label><input type="radio" name="q1-1" value="a"><span>Worksheet</span></label>
+                                <label><input type="radio" name="q1-1" value="b"><span>Cell (เซลล์)</span></label>
+                                <label><input type="radio" name="q1-1" value="c"><span>Workbook</span></label>
+                                <label><input type="radio" name="q1-1" value="d"><span>Range</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-1-1"></div>
                         </div>
                         <div class="quiz-item" data-quiz="1-2">
-                            <p class="quiz-question">2. คอลัมน์ใน Excel ใช้สัญลักษณ์อะไรแทน?</p>
+                            <p class="quiz-question">2. คอลัมน์ใน Excel ใช้สัญลักษณ์อะไรกำกับ?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q1-2" value="a"> ตัวเลข</label>
-                                <label><input type="radio" name="q1-2" value="b"> ตัวอักษรภาษาไทย</label>
-                                <label><input type="radio" name="q1-2" value="c"> ตัวอักษรภาษาอังกฤษ</label>
-                                <label><input type="radio" name="q1-2" value="d"> สัญลักษณ์พิเศษ</label>
+                                <label><input type="radio" name="q1-2" value="a"><span>ตัวเลข (1, 2, 3...)</span></label>
+                                <label><input type="radio" name="q1-2" value="b"><span>ตัวอักษรภาษาไทย</span></label>
+                                <label><input type="radio" name="q1-2" value="c"><span>ตัวอักษรภาษาอังกฤษ (A, B, C...)</span></label>
+                                <label><input type="radio" name="q1-2" value="d"><span>สัญลักษณ์พิเศษ (#, @, $)</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-1-2"></div>
                         </div>
                         <div class="quiz-item" data-quiz="1-3">
                             <p class="quiz-question">3. ปุ่มลัดสำหรับบันทึกไฟล์คือข้อใด?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q1-3" value="a"> Ctrl + S</label>
-                                <label><input type="radio" name="q1-3" value="b"> Ctrl + B</label>
-                                <label><input type="radio" name="q1-3" value="c"> Ctrl + P</label>
-                                <label><input type="radio" name="q1-3" value="d"> Ctrl + N</label>
+                                <label><input type="radio" name="q1-3" value="a"><span>Ctrl + S</span></label>
+                                <label><input type="radio" name="q1-3" value="b"><span>Ctrl + B</span></label>
+                                <label><input type="radio" name="q1-3" value="c"><span>Ctrl + P</span></label>
+                                <label><input type="radio" name="q1-3" value="d"><span>Ctrl + N</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-1-3"></div>
                         </div>
-                        <button class="btn-check" onclick="checkQuiz(1)">ตรวจคำตอบ</button>
+                        <button class="btn-check" onclick="checkQuiz(1)">✓ ตรวจคำตอบ</button>
                         <div class="quiz-result" id="result-1"></div>
                     </div>
                 </div>
 
                 <div class="lesson-nav">
-                    <button class="btn-prev" onclick="navigateToLesson('home')">← หน้าหลัก</button>
-                    <button class="btn-next" onclick="navigateToLesson('2')">บทที่ 2 →</button>
+                    <button class="btn-nav btn-prev" onclick="navigateToLesson('home')">← หน้าหลัก</button>
+                    <button class="btn-nav btn-next" onclick="navigateToLesson('2')">บทที่ 2: การจัดการข้อมูล →</button>
                 </div>
             </section>
 
 
-            <!-- Lesson 2: การจัดการข้อมูล -->
+            <!-- ==================== LESSON 2 ==================== -->
             <section class="lesson-section" id="lesson2">
-                <div class="lesson-header">
-                    <span class="lesson-number">บทที่ 2</span>
-                    <h2>การจัดการข้อมูลใน Excel</h2>
-                    <p class="lesson-objective">วัตถุประสงค์: นักเรียนสามารถป้อนข้อมูล จัดรูปแบบ และจัดการข้อมูลใน Excel ได้</p>
+                <div class="lesson-hero">
+                    <div class="lesson-hero-content">
+                        <span class="lesson-badge">บทที่ 2</span>
+                        <h1>การจัดการข้อมูลใน Excel</h1>
+                        <p>เรียนรู้การป้อน จัดรูปแบบ เรียง และกรองข้อมูลอย่างมืออาชีพ</p>
+                    </div>
+                    <div class="lesson-hero-icon">📋</div>
                 </div>
 
-                <div class="lesson-content">
-                    <div class="content-block">
-                        <h3>📌 ชนิดของข้อมูลใน Excel</h3>
-                        <p>Excel สามารถรับข้อมูลได้หลายชนิด ซึ่งจะส่งผลต่อการคำนวณและการแสดงผล</p>
-                        
-                        <div class="table-container">
-                            <table class="info-table">
-                                <thead>
-                                    <tr>
-                                        <th>ชนิดข้อมูล</th>
-                                        <th>คำอธิบาย</th>
-                                        <th>ตัวอย่าง</th>
-                                        <th>การจัดตำแหน่ง</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>ตัวเลข (Number)</strong></td>
-                                        <td>ข้อมูลที่เป็นตัวเลข สามารถนำมาคำนวณได้</td>
-                                        <td>100, 3.14, -5</td>
-                                        <td>ชิดขวา</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>ข้อความ (Text)</strong></td>
-                                        <td>ข้อมูลที่เป็นตัวอักษร ไม่สามารถคำนวณได้</td>
-                                        <td>สมชาย, Hello</td>
-                                        <td>ชิดซ้าย</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>วันที่ (Date)</strong></td>
-                                        <td>ข้อมูลวันที่ เวลา</td>
-                                        <td>1/1/2025, 10:30 AM</td>
-                                        <td>ชิดขวา</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>สูตร (Formula)</strong></td>
-                                        <td>สูตรคำนวณ ขึ้นต้นด้วย =</td>
-                                        <td>=A1+B1, =SUM(A1:A5)</td>
-                                        <td>แสดงผลลัพธ์</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="lesson-objectives">
+                    <h3>🎯 เมื่อเรียนจบบทนี้ นักเรียนจะสามารถ</h3>
+                    <div class="objectives-list">
+                        <div class="objective-item"><span class="obj-check">✓</span> แยกแยะชนิดของข้อมูล 4 ประเภทใน Excel ได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> ป้อนข้อมูลและแก้ไขได้อย่างถูกต้อง</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> จัดรูปแบบข้อมูลให้สวยงามและอ่านง่าย</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> ใช้ Sort และ Filter จัดการข้อมูลขนาดใหญ่ได้</div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 การป้อนข้อมูลและแก้ไข</h3>
-                        <div class="tip-box">
-                            <h4>🔑 เทคนิคการป้อนข้อมูล</h4>
-                            <ul>
-                                <li><strong>Enter:</strong> ยืนยันข้อมูลและเลื่อนลงแถวถัดไป</li>
-                                <li><strong>Tab:</strong> ยืนยันข้อมูลและเลื่อนไปคอลัมน์ถัดไป</li>
-                                <li><strong>Esc:</strong> ยกเลิกการป้อนข้อมูล</li>
-                                <li><strong>F2:</strong> แก้ไขข้อมูลในเซลล์ที่เลือก</li>
-                                <li><strong>Delete:</strong> ลบข้อมูลในเซลล์ที่เลือก</li>
-                            </ul>
-                        </div>
+                <!-- ชนิดของข้อมูล -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">📊</span>
+                        <h2>ชนิดของข้อมูลใน Excel (Data Types)</h2>
                     </div>
+                    <div class="card-body">
+                        <p>Excel สามารถรับข้อมูลได้หลายชนิด ซึ่งจะส่งผลต่อการคำนวณ การจัดตำแหน่ง และการแสดงผล สิ่งสำคัญคือต้องเข้าใจว่าข้อมูลแต่ละชนิดมีพฤติกรรมต่างกัน</p>
 
-
-                    <div class="content-block">
-                        <h3>📌 การจัดรูปแบบข้อมูล (Formatting)</h3>
-                        <p>การจัดรูปแบบช่วยให้ข้อมูลดูสวยงาม อ่านง่าย และเป็นมืออาชีพ</p>
-                        
-                        <div class="format-examples">
-                            <div class="format-card">
-                                <h4>🎨 จัดรูปแบบตัวอักษร</h4>
-                                <ul>
-                                    <li>เปลี่ยนฟอนต์ ขนาด สี</li>
-                                    <li>ตัวหนา เอียง ขีดเส้นใต้</li>
-                                    <li>เลือกเซลล์ → แท็บ Home → กลุ่ม Font</li>
-                                </ul>
+                        <div class="data-types-showcase">
+                            <div class="data-type-card">
+                                <div class="dt-header number-type">
+                                    <span class="dt-icon">🔢</span>
+                                    <h4>ตัวเลข (Number)</h4>
+                                </div>
+                                <div class="dt-body">
+                                    <p>ข้อมูลตัวเลขที่สามารถนำมาคำนวณได้</p>
+                                    <div class="dt-example">ตัวอย่าง: 100, 3.14, -5, 0.85</div>
+                                    <div class="dt-behavior">📍 จัดชิดขวาอัตโนมัติ</div>
+                                    <div class="dt-note">⚠️ ตัวเลขที่ขึ้นต้นด้วย 0 (เช่น เลขบัตร ปชช.) ต้องกำหนดเป็น Text ก่อน</div>
+                                </div>
                             </div>
-                            <div class="format-card">
-                                <h4>📐 จัดตำแหน่ง</h4>
-                                <ul>
-                                    <li>ชิดซ้าย กลาง ชิดขวา</li>
-                                    <li>Merge & Center (รวมเซลล์)</li>
-                                    <li>Wrap Text (ตัดข้อความให้อยู่ในเซลล์)</li>
-                                </ul>
+                            <div class="data-type-card">
+                                <div class="dt-header text-type">
+                                    <span class="dt-icon">📝</span>
+                                    <h4>ข้อความ (Text)</h4>
+                                </div>
+                                <div class="dt-body">
+                                    <p>ข้อมูลที่เป็นตัวอักษร ไม่สามารถคำนวณได้</p>
+                                    <div class="dt-example">ตัวอย่าง: สมชาย, Hello, ม.4/1</div>
+                                    <div class="dt-behavior">📍 จัดชิดซ้ายอัตโนมัติ</div>
+                                    <div class="dt-note">💡 ถ้าพิมพ์ '0891234567 (ใส่ ' นำหน้า) Excel จะเก็บเป็น Text</div>
+                                </div>
                             </div>
-                            <div class="format-card">
-                                <h4>🔢 จัดรูปแบบตัวเลข</h4>
-                                <ul>
-                                    <li>ทศนิยม: 3.14</li>
-                                    <li>เปอร์เซ็นต์: 85%</li>
-                                    <li>สกุลเงิน: ฿1,000.00</li>
-                                </ul>
+                            <div class="data-type-card">
+                                <div class="dt-header date-type">
+                                    <span class="dt-icon">📅</span>
+                                    <h4>วันที่/เวลา (Date/Time)</h4>
+                                </div>
+                                <div class="dt-body">
+                                    <p>ข้อมูลวันที่และเวลา สามารถคำนวณระยะห่างได้</p>
+                                    <div class="dt-example">ตัวอย่าง: 1/1/2025, 10:30 AM, 28 มิ.ย. 69</div>
+                                    <div class="dt-behavior">📍 จัดชิดขวาอัตโนมัติ</div>
+                                    <div class="dt-note">💡 Excel เก็บวันที่เป็นตัวเลข ดังนั้นสามารถ +/- วันได้!</div>
+                                </div>
                             </div>
-                            <div class="format-card">
-                                <h4>🖼️ เส้นขอบและสี</h4>
-                                <ul>
-                                    <li>ใส่เส้นขอบ (Borders)</li>
-                                    <li>เติมสีพื้นหลัง (Fill Color)</li>
-                                    <li>Conditional Formatting</li>
-                                </ul>
+                            <div class="data-type-card">
+                                <div class="dt-header formula-type">
+                                    <span class="dt-icon">🧮</span>
+                                    <h4>สูตร (Formula)</h4>
+                                </div>
+                                <div class="dt-body">
+                                    <p>สูตรคำนวณ ต้องขึ้นต้นด้วยเครื่องหมาย = เสมอ</p>
+                                    <div class="dt-example">ตัวอย่าง: =A1+B1, =SUM(A1:A5), =IF(A1>50,"ผ่าน","ตก")</div>
+                                    <div class="dt-behavior">📍 แสดงผลลัพธ์ของการคำนวณ</div>
+                                    <div class="dt-note">💡 คลิกที่เซลล์จะเห็นสูตรใน Formula Bar</div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 การเรียงลำดับและกรองข้อมูล</h3>
-                        <div class="two-column">
-                            <div class="column">
-                                <h4>การเรียงลำดับ (Sort)</h4>
-                                <p>ใช้สำหรับจัดเรียงข้อมูลตามลำดับ</p>
+                <!-- เทคนิคการป้อนข้อมูล -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">⌨️</span>
+                        <h2>เทคนิคการป้อนข้อมูล</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="tips-grid">
+                            <div class="tip-card">
+                                <h4>🔑 ปุ่มสำคัญขณะป้อนข้อมูล</h4>
                                 <ul>
-                                    <li><strong>A → Z:</strong> เรียงจากน้อยไปมาก</li>
-                                    <li><strong>Z → A:</strong> เรียงจากมากไปน้อย</li>
-                                    <li>ไปที่ แท็บ Data → Sort</li>
+                                    <li><kbd>Enter</kbd> — ยืนยันและเลื่อน<strong>ลง</strong></li>
+                                    <li><kbd>Tab</kbd> — ยืนยันและเลื่อน<strong>ไปขวา</strong></li>
+                                    <li><kbd>Shift+Tab</kbd> — ยืนยันและเลื่อน<strong>ไปซ้าย</strong></li>
+                                    <li><kbd>Esc</kbd> — ยกเลิกการพิมพ์</li>
+                                    <li><kbd>F2</kbd> — แก้ไขเซลล์ปัจจุบัน</li>
+                                    <li><kbd>Delete</kbd> — ลบข้อมูล</li>
                                 </ul>
                             </div>
-                            <div class="column">
-                                <h4>การกรองข้อมูล (Filter)</h4>
-                                <p>ใช้สำหรับแสดงเฉพาะข้อมูลที่ต้องการ</p>
-                                <ul>
-                                    <li>ไปที่ แท็บ Data → Filter</li>
-                                    <li>คลิกลูกศรที่หัวคอลัมน์</li>
-                                    <li>เลือกเงื่อนไขที่ต้องการกรอง</li>
-                                </ul>
+                            <div class="tip-card">
+                                <h4>⚡ AutoFill - กรอกข้อมูลอัตโนมัติ</h4>
+                                <p>ฟีเจอร์มหัศจรรย์ที่ช่วยประหยัดเวลา:</p>
+                                <ol>
+                                    <li>พิมพ์ข้อมูลเริ่มต้น (เช่น 1, 2 หรือ จันทร์)</li>
+                                    <li>เลือกเซลล์ที่พิมพ์</li>
+                                    <li>จับมุมขวาล่าง (■) ของเซลล์</li>
+                                    <li>ลากลงไปตามต้องการ</li>
+                                </ol>
+                                <div class="autofill-examples">
+                                    <span>1, 2 → 3, 4, 5...</span>
+                                    <span>จ, อ → พ, พฤ, ศ...</span>
+                                    <span>ม.ค. → ก.พ., มี.ค....</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block example-block">
-                        <h3>💻 ตัวอย่างการใช้งาน: ตารางคะแนนสอบ</h3>
-                        <div class="excel-preview">
-                            <table class="excel-table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>A</th>
-                                        <th>B</th>
-                                        <th>C</th>
-                                        <th>D</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="row-num">1</td>
-                                        <td class="header-cell">ลำดับ</td>
-                                        <td class="header-cell">ชื่อ-สกุล</td>
-                                        <td class="header-cell">คะแนนสอบ</td>
-                                        <td class="header-cell">เกรด</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">2</td>
-                                        <td>1</td>
-                                        <td>สมชาย ใจดี</td>
-                                        <td>85</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">3</td>
-                                        <td>2</td>
-                                        <td>สมหญิง รักเรียน</td>
-                                        <td>72</td>
-                                        <td>B</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">4</td>
-                                        <td>3</td>
-                                        <td>มานะ ตั้งใจ</td>
-                                        <td>91</td>
-                                        <td>A</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <!-- การจัดรูปแบบ -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">🎨</span>
+                        <h2>การจัดรูปแบบข้อมูล (Formatting)</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>การจัดรูปแบบที่ดีจะทำให้ข้อมูลอ่านง่าย ดูเป็นระเบียบ และเป็นมืออาชีพ</p>
+
+                        <div class="format-showcase">
+                            <div class="format-group">
+                                <div class="format-icon">🔤</div>
+                                <h4>จัดรูปแบบตัวอักษร (Font)</h4>
+                                <p>เปลี่ยนฟอนต์ ขนาด สี ตัวหนา เอียง ขีดเส้นใต้</p>
+                                <div class="format-demo">
+                                    <span style="font-weight:700;">ตัวหนา</span>
+                                    <span style="font-style:italic;">ตัวเอียง</span>
+                                    <span style="text-decoration:underline;">ขีดเส้นใต้</span>
+                                    <span style="color:#e53e3e;">สีแดง</span>
+                                </div>
+                            </div>
+                            <div class="format-group">
+                                <div class="format-icon">📐</div>
+                                <h4>จัดตำแหน่ง (Alignment)</h4>
+                                <p>ชิดซ้าย กลาง ชิดขวา Merge & Center Wrap Text</p>
+                                <div class="format-demo">
+                                    <span class="align-left">ชิดซ้าย</span>
+                                    <span class="align-center">กลาง</span>
+                                    <span class="align-right">ชิดขวา</span>
+                                </div>
+                            </div>
+                            <div class="format-group">
+                                <div class="format-icon">🔢</div>
+                                <h4>รูปแบบตัวเลข (Number Format)</h4>
+                                <p>กำหนดรูปแบบการแสดงตัวเลข</p>
+                                <div class="number-formats">
+                                    <div class="nf-item"><span class="nf-label">ทั่วไป:</span><span>1000</span></div>
+                                    <div class="nf-item"><span class="nf-label">จำนวน:</span><span>1,000.00</span></div>
+                                    <div class="nf-item"><span class="nf-label">เปอร์เซ็นต์:</span><span>85.50%</span></div>
+                                    <div class="nf-item"><span class="nf-label">สกุลเงิน:</span><span>฿1,000.00</span></div>
+                                    <div class="nf-item"><span class="nf-label">วันที่:</span><span>28/06/2569</span></div>
+                                </div>
+                            </div>
+                            <div class="format-group">
+                                <div class="format-icon">🖼️</div>
+                                <h4>เส้นขอบและสีพื้น (Borders & Fill)</h4>
+                                <p>เพิ่มเส้นขอบ เติมสีพื้นหลัง ทำให้ตารางดูสวยงาม</p>
+                                <div class="border-demo">
+                                    <div class="bd-cell bd-all">เส้นรอบ</div>
+                                    <div class="bd-cell bd-bottom">เส้นล่าง</div>
+                                    <div class="bd-cell bd-fill">เติมสี</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-banner warning-banner">
+                            <div class="info-banner-icon">⭐</div>
+                            <div class="info-banner-content">
+                                <strong>Conditional Formatting</strong> — จัดรูปแบบอัตโนมัติตามเงื่อนไข เช่น เซลล์ที่มีค่ามากกว่า 80 จะเปลี่ยนเป็นสีเขียว หรือน้อยกว่า 50 เป็นสีแดง ไปที่ Home → Conditional Formatting
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Quiz บทที่ 2 -->
-                    <div class="quiz-section">
-                        <h3>📝 แบบฝึกหัดท้ายบท</h3>
+                <!-- Sort & Filter -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">🔄</span>
+                        <h2>การเรียงลำดับและกรองข้อมูล (Sort & Filter)</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="two-col">
+                            <div class="col">
+                                <h4>📊 การเรียงลำดับ (Sort)</h4>
+                                <p>ใช้จัดเรียงข้อมูลตามลำดับที่ต้องการ:</p>
+                                <div class="steps-compact">
+                                    <div class="step-sm">1. คลิกเซลล์ในคอลัมน์ที่ต้องการเรียง</div>
+                                    <div class="step-sm">2. ไปที่แท็บ <strong>Data</strong></div>
+                                    <div class="step-sm">3. เลือก <strong>A→Z</strong> (น้อยไปมาก) หรือ <strong>Z→A</strong> (มากไปน้อย)</div>
+                                </div>
+                                <div class="info-banner">
+                                    <div class="info-banner-icon">💡</div>
+                                    <div class="info-banner-content">ใช้ Custom Sort เพื่อเรียงหลายคอลัมน์ เช่น เรียงตามชั้นก่อน แล้วเรียงตามคะแนน</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h4>🔍 การกรองข้อมูล (Filter)</h4>
+                                <p>แสดงเฉพาะข้อมูลที่ตรงตามเงื่อนไข:</p>
+                                <div class="steps-compact">
+                                    <div class="step-sm">1. คลิกเซลล์ใดก็ได้ในตาราง</div>
+                                    <div class="step-sm">2. ไปที่แท็บ <strong>Data</strong> → <strong>Filter</strong></div>
+                                    <div class="step-sm">3. คลิกลูกศร ▼ ที่หัวคอลัมน์</div>
+                                    <div class="step-sm">4. เลือก/ยกเลิกเลือกรายการที่ต้องการ</div>
+                                </div>
+                                <div class="info-banner">
+                                    <div class="info-banner-icon">💡</div>
+                                    <div class="info-banner-content">ใช้ Number Filters เช่น "Greater Than 80" เพื่อกรองเฉพาะคะแนนที่มากกว่า 80</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ตัวอย่างตาราง -->
+                        <h4 style="margin-top:25px;">💻 ตัวอย่าง: ตารางคะแนนสอบพร้อมการจัดรูปแบบ</h4>
+                        <div class="excel-mock-full">
+                            <div class="excel-mock-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                                <span class="mock-title">คะแนนสอบปลายภาค.xlsx</span>
+                            </div>
+                            <div class="excel-mock-body">
+                                <div class="mock-row mock-header-row"><span>เลขที่</span><span>ชื่อ-สกุล</span><span>คณิต</span><span>วิทย์</span><span>อังกฤษ</span><span>รวม</span><span>เกรด</span></div>
+                                <div class="mock-row"><span>1</span><span>สมชาย ใจดี</span><span>85</span><span>78</span><span>92</span><span>255</span><span class="grade-a">A</span></div>
+                                <div class="mock-row"><span>2</span><span>สมหญิง รักเรียน</span><span>72</span><span>68</span><span>75</span><span>215</span><span class="grade-b">B</span></div>
+                                <div class="mock-row"><span>3</span><span>มานะ ตั้งใจ</span><span>91</span><span>95</span><span>88</span><span>274</span><span class="grade-a">A</span></div>
+                                <div class="mock-row"><span>4</span><span>วิไล สุขสบาย</span><span>45</span><span>52</span><span>48</span><span>145</span><span class="grade-d">D</span></div>
+                                <div class="mock-row mock-footer"><span></span><span>เฉลี่ย</span><span class="formula">73.25</span><span class="formula">73.25</span><span class="formula">75.75</span><span class="formula">222.25</span><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz 2 -->
+                <div class="content-card quiz-card">
+                    <div class="card-header">
+                        <span class="card-icon">📝</span>
+                        <h2>แบบฝึกหัดท้ายบทที่ 2</h2>
+                    </div>
+                    <div class="card-body">
                         <div class="quiz-item" data-quiz="2-1">
-                            <p class="quiz-question">1. ข้อมูลชนิดใดที่จะถูกจัดชิดขวาอัตโนมัติใน Excel?</p>
+                            <p class="quiz-question">1. ข้อมูลชนิดใดที่ Excel จัดชิดขวาอัตโนมัติ?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q2-1" value="a"> ข้อความ (Text)</label>
-                                <label><input type="radio" name="q2-1" value="b"> ตัวเลข (Number)</label>
-                                <label><input type="radio" name="q2-1" value="c"> สูตร (Formula)</label>
-                                <label><input type="radio" name="q2-1" value="d"> รูปภาพ (Image)</label>
+                                <label><input type="radio" name="q2-1" value="a"><span>ข้อความ (Text)</span></label>
+                                <label><input type="radio" name="q2-1" value="b"><span>ตัวเลข (Number)</span></label>
+                                <label><input type="radio" name="q2-1" value="c"><span>สูตร (Formula)</span></label>
+                                <label><input type="radio" name="q2-1" value="d"><span>รูปภาพ (Image)</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-2-1"></div>
                         </div>
                         <div class="quiz-item" data-quiz="2-2">
-                            <p class="quiz-question">2. ปุ่มใดใช้สำหรับยืนยันข้อมูลและเลื่อนไปคอลัมน์ถัดไป?</p>
+                            <p class="quiz-question">2. ปุ่มใดใช้ยืนยันข้อมูลและเลื่อนไปคอลัมน์ถัดไป (ไปทางขวา)?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q2-2" value="a"> Enter</label>
-                                <label><input type="radio" name="q2-2" value="b"> Tab</label>
-                                <label><input type="radio" name="q2-2" value="c"> Esc</label>
-                                <label><input type="radio" name="q2-2" value="d"> Space</label>
+                                <label><input type="radio" name="q2-2" value="a"><span>Enter</span></label>
+                                <label><input type="radio" name="q2-2" value="b"><span>Tab</span></label>
+                                <label><input type="radio" name="q2-2" value="c"><span>Esc</span></label>
+                                <label><input type="radio" name="q2-2" value="d"><span>Space</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-2-2"></div>
                         </div>
                         <div class="quiz-item" data-quiz="2-3">
-                            <p class="quiz-question">3. การรวมเซลล์หลายเซลล์เข้าด้วยกัน ใช้คำสั่งอะไร?</p>
+                            <p class="quiz-question">3. คำสั่ง Merge & Center ใช้ทำอะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q2-3" value="a"> Wrap Text</label>
-                                <label><input type="radio" name="q2-3" value="b"> Merge & Center</label>
-                                <label><input type="radio" name="q2-3" value="c"> AutoFit</label>
-                                <label><input type="radio" name="q2-3" value="d"> Group</label>
+                                <label><input type="radio" name="q2-3" value="a"><span>ตัดข้อความให้อยู่ในเซลล์</span></label>
+                                <label><input type="radio" name="q2-3" value="b"><span>รวมหลายเซลล์เข้าด้วยกันและจัดกลาง</span></label>
+                                <label><input type="radio" name="q2-3" value="c"><span>ปรับขนาดคอลัมน์อัตโนมัติ</span></label>
+                                <label><input type="radio" name="q2-3" value="d"><span>จัดกลุ่มข้อมูล</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-2-3"></div>
                         </div>
-                        <button class="btn-check" onclick="checkQuiz(2)">ตรวจคำตอบ</button>
+                        <button class="btn-check" onclick="checkQuiz(2)">✓ ตรวจคำตอบ</button>
                         <div class="quiz-result" id="result-2"></div>
                     </div>
                 </div>
 
                 <div class="lesson-nav">
-                    <button class="btn-prev" onclick="navigateToLesson('1')">← บทที่ 1</button>
-                    <button class="btn-next" onclick="navigateToLesson('3')">บทที่ 3 →</button>
+                    <button class="btn-nav btn-prev" onclick="navigateToLesson('1')">← บทที่ 1</button>
+                    <button class="btn-nav btn-next" onclick="navigateToLesson('3')">บทที่ 3: สูตรและฟังก์ชัน →</button>
                 </div>
             </section>
 
 
-            <!-- Lesson 3: สูตรและฟังก์ชัน -->
+            <!-- ==================== LESSON 3 ==================== -->
             <section class="lesson-section" id="lesson3">
-                <div class="lesson-header">
-                    <span class="lesson-number">บทที่ 3</span>
-                    <h2>สูตรและฟังก์ชันใน Excel</h2>
-                    <p class="lesson-objective">วัตถุประสงค์: นักเรียนสามารถใช้สูตรคำนวณพื้นฐานและฟังก์ชันที่สำคัญได้</p>
+                <div class="lesson-hero">
+                    <div class="lesson-hero-content">
+                        <span class="lesson-badge">บทที่ 3</span>
+                        <h1>สูตรและฟังก์ชันใน Excel</h1>
+                        <p>หัวใจสำคัญของ Excel — เรียนรู้การคำนวณตั้งแต่พื้นฐานถึงขั้นสูง</p>
+                    </div>
+                    <div class="lesson-hero-icon">🧮</div>
                 </div>
 
-                <div class="lesson-content">
-                    <div class="content-block">
-                        <h3>📌 หลักการเขียนสูตรใน Excel</h3>
-                        <div class="highlight-box">
-                            <h4>🔑 กฎสำคัญ</h4>
-                            <ul>
-                                <li>สูตรทุกสูตรต้อง<strong>ขึ้นต้นด้วยเครื่องหมาย = (เท่ากับ)</strong></li>
-                                <li>สามารถอ้างอิงเซลล์อื่นได้ เช่น =A1+B1</li>
-                                <li>ใช้เครื่องหมายคำนวณ: + (บวก), - (ลบ), * (คูณ), / (หาร)</li>
-                                <li>ลำดับการคำนวณ: วงเล็บ → คูณ/หาร → บวก/ลบ</li>
-                            </ul>
-                        </div>
+                <div class="lesson-objectives">
+                    <h3>🎯 เมื่อเรียนจบบทนี้ นักเรียนจะสามารถ</h3>
+                    <div class="objectives-list">
+                        <div class="objective-item"><span class="obj-check">✓</span> เขียนสูตรคำนวณพื้นฐาน (+, -, *, /) ได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> ใช้ฟังก์ชัน SUM, AVERAGE, MAX, MIN, COUNT ได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> ใช้ฟังก์ชัน IF สร้างเงื่อนไขได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> เข้าใจ Cell Reference (Relative, Absolute, Mixed)</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> ใช้ COUNTIF, SUMIF, VLOOKUP ได้</div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 เครื่องหมายคำนวณ (Operators)</h3>
-                        <div class="table-container">
-                            <table class="info-table">
-                                <thead>
-                                    <tr>
-                                        <th>เครื่องหมาย</th>
-                                        <th>ความหมาย</th>
-                                        <th>ตัวอย่าง</th>
-                                        <th>ผลลัพธ์</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>+</code></td>
-                                        <td>บวก</td>
-                                        <td>=5+3</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>-</code></td>
-                                        <td>ลบ</td>
-                                        <td>=10-4</td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>*</code></td>
-                                        <td>คูณ</td>
-                                        <td>=6*7</td>
-                                        <td>42</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/</code></td>
-                                        <td>หาร</td>
-                                        <td>=20/4</td>
-                                        <td>5</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>^</code></td>
-                                        <td>ยกกำลัง</td>
-                                        <td>=2^3</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>&</code></td>
-                                        <td>ต่อข้อความ</td>
-                                        <td>="สวัสดี"&"ครับ"</td>
-                                        <td>สวัสดีครับ</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <!-- หลักการเขียนสูตร -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">📐</span>
+                        <h2>หลักการเขียนสูตรใน Excel</h2>
                     </div>
+                    <div class="card-body">
+                        <div class="info-banner">
+                            <div class="info-banner-icon">🔑</div>
+                            <div class="info-banner-content">
+                                <strong>กฎข้อที่ 1:</strong> สูตรทุกสูตรต้อง<strong>ขึ้นต้นด้วยเครื่องหมาย = (เท่ากับ)</strong> เสมอ! ถ้าไม่มี = Excel จะถือว่าเป็นข้อความธรรมดา
+                            </div>
+                        </div>
 
+                        <h4>เครื่องหมายคำนวณ (Arithmetic Operators)</h4>
+                        <div class="operator-grid">
+                            <div class="op-card"><div class="op-symbol">+</div><div class="op-name">บวก</div><div class="op-example">=5+3 → 8</div></div>
+                            <div class="op-card"><div class="op-symbol">-</div><div class="op-name">ลบ</div><div class="op-example">=10-4 → 6</div></div>
+                            <div class="op-card"><div class="op-symbol">*</div><div class="op-name">คูณ</div><div class="op-example">=6*7 → 42</div></div>
+                            <div class="op-card"><div class="op-symbol">/</div><div class="op-name">หาร</div><div class="op-example">=20/4 → 5</div></div>
+                            <div class="op-card"><div class="op-symbol">^</div><div class="op-name">ยกกำลัง</div><div class="op-example">=2^3 → 8</div></div>
+                            <div class="op-card"><div class="op-symbol">&</div><div class="op-name">ต่อข้อความ</div><div class="op-example">="A"&"B" → AB</div></div>
+                        </div>
 
-                    <div class="content-block">
-                        <h3>📌 ฟังก์ชันที่ใช้บ่อย</h3>
-                        <div class="function-cards">
-                            <div class="func-card">
-                                <div class="func-name">SUM</div>
-                                <div class="func-desc">หาผลรวม</div>
-                                <div class="func-syntax">=SUM(ช่วงเซลล์)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =SUM(A1:A10)<br>
-                                    หาผลรวมของเซลล์ A1 ถึง A10
-                                </div>
-                            </div>
-                            <div class="func-card">
-                                <div class="func-name">AVERAGE</div>
-                                <div class="func-desc">หาค่าเฉลี่ย</div>
-                                <div class="func-syntax">=AVERAGE(ช่วงเซลล์)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =AVERAGE(B1:B5)<br>
-                                    หาค่าเฉลี่ยของเซลล์ B1 ถึง B5
-                                </div>
-                            </div>
-                            <div class="func-card">
-                                <div class="func-name">MAX</div>
-                                <div class="func-desc">หาค่าสูงสุด</div>
-                                <div class="func-syntax">=MAX(ช่วงเซลล์)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =MAX(C1:C20)<br>
-                                    หาค่าสูงสุดจากเซลล์ C1 ถึง C20
-                                </div>
-                            </div>
-                            <div class="func-card">
-                                <div class="func-name">MIN</div>
-                                <div class="func-desc">หาค่าต่ำสุด</div>
-                                <div class="func-syntax">=MIN(ช่วงเซลล์)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =MIN(C1:C20)<br>
-                                    หาค่าต่ำสุดจากเซลล์ C1 ถึง C20
-                                </div>
-                            </div>
-                            <div class="func-card">
-                                <div class="func-name">COUNT</div>
-                                <div class="func-desc">นับจำนวนเซลล์ที่มีตัวเลข</div>
-                                <div class="func-syntax">=COUNT(ช่วงเซลล์)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =COUNT(A1:A50)<br>
-                                    นับจำนวนเซลล์ที่มีข้อมูลตัวเลข
-                                </div>
-                            </div>
-                            <div class="func-card">
-                                <div class="func-name">IF</div>
-                                <div class="func-desc">เงื่อนไข ถ้า...แล้ว...</div>
-                                <div class="func-syntax">=IF(เงื่อนไข, ค่าถ้าจริง, ค่าถ้าเท็จ)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =IF(A1>=50,"ผ่าน","ไม่ผ่าน")<br>
-                                    ถ้า A1 ≥ 50 แสดง "ผ่าน" ไม่งั้นแสดง "ไม่ผ่าน"
-                                </div>
-                            </div>
-                            <div class="func-card">
-                                <div class="func-name">COUNTIF</div>
-                                <div class="func-desc">นับจำนวนตามเงื่อนไข</div>
-                                <div class="func-syntax">=COUNTIF(ช่วง, เงื่อนไข)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =COUNTIF(B1:B20,"A")<br>
-                                    นับจำนวนเซลล์ที่มีค่า "A"
-                                </div>
-                            </div>
-                            <div class="func-card">
-                                <div class="func-name">VLOOKUP</div>
-                                <div class="func-desc">ค้นหาข้อมูลในตาราง</div>
-                                <div class="func-syntax">=VLOOKUP(ค่าค้น, ตาราง, คอลัมน์, ประเภท)</div>
-                                <div class="func-example">
-                                    <strong>ตัวอย่าง:</strong> =VLOOKUP(A1,D1:E10,2,FALSE)<br>
-                                    ค้นหาค่า A1 ในตาราง D1:E10 แสดงค่าคอลัมน์ที่ 2
-                                </div>
+                        <h4>เครื่องหมายเปรียบเทียบ (Comparison Operators)</h4>
+                        <div class="operator-grid">
+                            <div class="op-card"><div class="op-symbol">=</div><div class="op-name">เท่ากับ</div><div class="op-example">A1=B1</div></div>
+                            <div class="op-card"><div class="op-symbol"><></div><div class="op-name">ไม่เท่ากับ</div><div class="op-example">A1<>B1</div></div>
+                            <div class="op-card"><div class="op-symbol">></div><div class="op-name">มากกว่า</div><div class="op-example">A1>50</div></div>
+                            <div class="op-card"><div class="op-symbol"><</div><div class="op-name">น้อยกว่า</div><div class="op-example">A1<50</div></div>
+                            <div class="op-card"><div class="op-symbol">>=</div><div class="op-name">มากกว่าหรือเท่ากับ</div><div class="op-example">A1>=80</div></div>
+                            <div class="op-card"><div class="op-symbol"><=</div><div class="op-name">น้อยกว่าหรือเท่ากับ</div><div class="op-example">A1<=100</div></div>
+                        </div>
+
+                        <div class="info-banner warning-banner">
+                            <div class="info-banner-icon">⚠️</div>
+                            <div class="info-banner-content">
+                                <strong>ลำดับการคำนวณ (Order of Operations):</strong> วงเล็บ () → ยกกำลัง ^ → คูณ * หาร / → บวก + ลบ - (เหมือนคณิตศาสตร์!)
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block example-block">
-                        <h3>💻 ตัวอย่าง: คำนวณคะแนนสอบกลางภาค</h3>
-                        <div class="excel-preview">
-                            <table class="excel-table">
-                                <thead>
-                                    <tr>
-                                        <th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="row-num">1</td>
-                                        <td class="header-cell">ชื่อ</td>
-                                        <td class="header-cell">วิชา 1</td>
-                                        <td class="header-cell">วิชา 2</td>
-                                        <td class="header-cell">รวม</td>
-                                        <td class="header-cell">เฉลี่ย</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">2</td>
-                                        <td>สมชาย</td>
-                                        <td>80</td>
-                                        <td>75</td>
-                                        <td class="formula-cell">=B2+C2</td>
-                                        <td class="formula-cell">=AVERAGE(B2:C2)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">3</td>
-                                        <td>สมหญิง</td>
-                                        <td>90</td>
-                                        <td>85</td>
-                                        <td class="formula-cell">=B3+C3</td>
-                                        <td class="formula-cell">=AVERAGE(B3:C3)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">4</td>
-                                        <td colspan="1"><strong>สูงสุด</strong></td>
-                                        <td class="formula-cell">=MAX(B2:B3)</td>
-                                        <td class="formula-cell">=MAX(C2:C3)</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <!-- ฟังก์ชันพื้นฐาน -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">⚡</span>
+                        <h2>ฟังก์ชันที่ใช้บ่อยที่สุด</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>ฟังก์ชัน คือ สูตรสำเร็จรูปที่ Excel เตรียมไว้ให้ ทำให้ไม่ต้องเขียนสูตรยาวๆ เอง</p>
+
+                        <div class="function-showcase">
+                            <div class="func-item">
+                                <div class="func-header">
+                                    <span class="func-badge">SUM</span>
+                                    <span class="func-desc-short">หาผลรวม</span>
+                                </div>
+                                <div class="func-syntax"><code>=SUM(ช่วงเซลล์)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=SUM(A1:A10)</code><span>รวมค่า A1 ถึง A10</span></div>
+                                    <div class="func-ex"><code>=SUM(A1,B1,C1)</code><span>รวม A1 + B1 + C1</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item">
+                                <div class="func-header">
+                                    <span class="func-badge">AVERAGE</span>
+                                    <span class="func-desc-short">หาค่าเฉลี่ย</span>
+                                </div>
+                                <div class="func-syntax"><code>=AVERAGE(ช่วงเซลล์)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=AVERAGE(B2:B30)</code><span>เฉลี่ยคะแนนทั้งห้อง</span></div>
+                                    <div class="func-ex"><code>=AVERAGE(B2:D2)</code><span>เฉลี่ยคะแนน 3 วิชาของคนเดียว</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item">
+                                <div class="func-header">
+                                    <span class="func-badge">MAX</span>
+                                    <span class="func-desc-short">หาค่าสูงสุด</span>
+                                </div>
+                                <div class="func-syntax"><code>=MAX(ช่วงเซลล์)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=MAX(C2:C50)</code><span>คะแนนสูงสุดของห้อง</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item">
+                                <div class="func-header">
+                                    <span class="func-badge">MIN</span>
+                                    <span class="func-desc-short">หาค่าต่ำสุด</span>
+                                </div>
+                                <div class="func-syntax"><code>=MIN(ช่วงเซลล์)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=MIN(C2:C50)</code><span>คะแนนต่ำสุดของห้อง</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item">
+                                <div class="func-header">
+                                    <span class="func-badge">COUNT</span>
+                                    <span class="func-desc-short">นับจำนวนเซลล์ที่มีตัวเลข</span>
+                                </div>
+                                <div class="func-syntax"><code>=COUNT(ช่วงเซลล์)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=COUNT(A1:A100)</code><span>นับจำนวนเซลล์ที่มีข้อมูลตัวเลข</span></div>
+                                    <div class="func-ex"><code>=COUNTA(A1:A100)</code><span>นับเซลล์ที่มีข้อมูลทุกชนิด (รวม Text)</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item func-highlight">
+                                <div class="func-header">
+                                    <span class="func-badge important">IF</span>
+                                    <span class="func-desc-short">สร้างเงื่อนไข (ถ้า...แล้ว...ไม่งั้น...)</span>
+                                </div>
+                                <div class="func-syntax"><code>=IF(เงื่อนไข, ค่าถ้าจริง, ค่าถ้าเท็จ)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=IF(A1>=50,"ผ่าน","ไม่ผ่าน")</code><span>ถ้า ≥50 แสดง "ผ่าน"</span></div>
+                                    <div class="func-ex"><code>=IF(B2>=80,"A",IF(B2>=70,"B",IF(B2>=60,"C","D")))</code><span>ตัดเกรดอัตโนมัติ</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item">
+                                <div class="func-header">
+                                    <span class="func-badge">COUNTIF</span>
+                                    <span class="func-desc-short">นับจำนวนตามเงื่อนไข</span>
+                                </div>
+                                <div class="func-syntax"><code>=COUNTIF(ช่วง, เงื่อนไข)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=COUNTIF(D2:D50,"A")</code><span>นับจำนวนคนที่ได้เกรด A</span></div>
+                                    <div class="func-ex"><code>=COUNTIF(B2:B50,">=80")</code><span>นับคนที่ได้คะแนน ≥80</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item">
+                                <div class="func-header">
+                                    <span class="func-badge">SUMIF</span>
+                                    <span class="func-desc-short">รวมค่าตามเงื่อนไข</span>
+                                </div>
+                                <div class="func-syntax"><code>=SUMIF(ช่วงเงื่อนไข, เงื่อนไข, ช่วงรวมค่า)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=SUMIF(A:A,"อาหาร",C:C)</code><span>รวมค่าใช้จ่ายหมวด "อาหาร"</span></div>
+                                </div>
+                            </div>
+
+                            <div class="func-item func-highlight">
+                                <div class="func-header">
+                                    <span class="func-badge important">VLOOKUP</span>
+                                    <span class="func-desc-short">ค้นหาข้อมูลในตาราง</span>
+                                </div>
+                                <div class="func-syntax"><code>=VLOOKUP(ค่าค้น, ตาราง, คอลัมน์ที่จะแสดง, ประเภทการค้น)</code></div>
+                                <div class="func-examples">
+                                    <div class="func-ex"><code>=VLOOKUP(A2,Sheet2!A:B,2,FALSE)</code><span>ค้นชื่อจาก Sheet2 แสดงข้อมูลคอลัมน์ 2</span></div>
+                                </div>
+                                <div class="func-note">💡 ใช้ FALSE (ค้นหาตรงกัน) เป็นหลัก | ค่าที่ค้นต้องอยู่คอลัมน์แรกสุดของตาราง</div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
+                <!-- Cell Reference -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">📎</span>
+                        <h2>การอ้างอิงเซลล์ (Cell Reference)</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>เมื่อคัดลอกสูตรไปเซลล์อื่น Cell Reference จะมีผลต่อการเปลี่ยนแปลงของสูตร</p>
+                        <div class="ref-types">
+                            <div class="ref-card">
+                                <h4>Relative Reference</h4>
+                                <div class="ref-example">A1, B2, C3</div>
+                                <p>เปลี่ยนตามตำแหน่งที่ Copy ไป</p>
+                                <div class="ref-demo">Copy =A1+B1 ลง 1 แถว → =A2+B2</div>
+                            </div>
+                            <div class="ref-card">
+                                <h4>Absolute Reference</h4>
+                                <div class="ref-example">$A$1, $B$2</div>
+                                <p>ล็อคไว้ ไม่เปลี่ยนเมื่อ Copy</p>
+                                <div class="ref-demo">Copy =$A$1*B1 ลง → =$A$1*B2</div>
+                            </div>
+                            <div class="ref-card">
+                                <h4>Mixed Reference</h4>
+                                <div class="ref-example">$A1, A$1</div>
+                                <p>ล็อคเฉพาะ Row หรือ Column</p>
+                                <div class="ref-demo">$A1 = ล็อคคอลัมน์ | A$1 = ล็อคแถว</div>
+                            </div>
+                        </div>
+                        <div class="info-banner">
+                            <div class="info-banner-icon">💡</div>
+                            <div class="info-banner-content">
+                                <strong>เคล็ดลับ:</strong> กด <kbd>F4</kbd> เพื่อสลับระหว่าง A1 → $A$1 → A$1 → $A1 → A1
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- Quiz บทที่ 3 -->
-                    <div class="quiz-section">
-                        <h3>📝 แบบฝึกหัดท้ายบท</h3>
+                <!-- ตัวอย่างการใช้งาน -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">💻</span>
+                        <h2>ตัวอย่าง: คำนวณคะแนนสอบ</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="excel-mock-full">
+                            <div class="excel-mock-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                                <span class="mock-title">คำนวณเกรด.xlsx</span>
+                            </div>
+                            <div class="excel-mock-body">
+                                <div class="mock-row mock-header-row"><span>ชื่อ</span><span>วิชา 1</span><span>วิชา 2</span><span>วิชา 3</span><span>รวม</span><span>เฉลี่ย</span><span>เกรด</span></div>
+                                <div class="mock-row"><span>สมชาย</span><span>80</span><span>75</span><span>85</span><span class="formula">=SUM(B2:D2)</span><span class="formula">=AVERAGE(B2:D2)</span><span class="formula">=IF(F2>=80,"A",IF(F2>=70,"B","C"))</span></div>
+                                <div class="mock-row"><span>สมหญิง</span><span>90</span><span>85</span><span>88</span><span class="formula">=SUM(B3:D3)</span><span class="formula">=AVERAGE(B3:D3)</span><span class="formula">=IF(F3>=80,"A",IF(F3>=70,"B","C"))</span></div>
+                                <div class="mock-row mock-footer"><span>สูงสุด</span><span class="formula">=MAX(B2:B3)</span><span class="formula">=MAX(C2:C3)</span><span class="formula">=MAX(D2:D3)</span><span></span><span></span><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz 3 -->
+                <div class="content-card quiz-card">
+                    <div class="card-header">
+                        <span class="card-icon">📝</span>
+                        <h2>แบบฝึกหัดท้ายบทที่ 3</h2>
+                    </div>
+                    <div class="card-body">
                         <div class="quiz-item" data-quiz="3-1">
                             <p class="quiz-question">1. สูตรใน Excel ต้องขึ้นต้นด้วยเครื่องหมายอะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q3-1" value="a"> + (บวก)</label>
-                                <label><input type="radio" name="q3-1" value="b"> = (เท่ากับ)</label>
-                                <label><input type="radio" name="q3-1" value="c"> # (แฮช)</label>
-                                <label><input type="radio" name="q3-1" value="d"> @ (แอท)</label>
+                                <label><input type="radio" name="q3-1" value="a"><span>+ (บวก)</span></label>
+                                <label><input type="radio" name="q3-1" value="b"><span>= (เท่ากับ)</span></label>
+                                <label><input type="radio" name="q3-1" value="c"><span># (แฮช)</span></label>
+                                <label><input type="radio" name="q3-1" value="d"><span>@ (แอท)</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-3-1"></div>
                         </div>
                         <div class="quiz-item" data-quiz="3-2">
                             <p class="quiz-question">2. ฟังก์ชัน AVERAGE ใช้ทำอะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q3-2" value="a"> หาผลรวม</label>
-                                <label><input type="radio" name="q3-2" value="b"> หาค่าเฉลี่ย</label>
-                                <label><input type="radio" name="q3-2" value="c"> หาค่าสูงสุด</label>
-                                <label><input type="radio" name="q3-2" value="d"> นับจำนวน</label>
+                                <label><input type="radio" name="q3-2" value="a"><span>หาผลรวม</span></label>
+                                <label><input type="radio" name="q3-2" value="b"><span>หาค่าเฉลี่ย</span></label>
+                                <label><input type="radio" name="q3-2" value="c"><span>หาค่าสูงสุด</span></label>
+                                <label><input type="radio" name="q3-2" value="d"><span>นับจำนวน</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-3-2"></div>
                         </div>
                         <div class="quiz-item" data-quiz="3-3">
                             <p class="quiz-question">3. =IF(A1>=80,"ดีมาก","พอใช้") ถ้า A1 = 75 ผลลัพธ์คืออะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q3-3" value="a"> ดีมาก</label>
-                                <label><input type="radio" name="q3-3" value="b"> พอใช้</label>
-                                <label><input type="radio" name="q3-3" value="c"> 75</label>
-                                <label><input type="radio" name="q3-3" value="d"> ERROR</label>
+                                <label><input type="radio" name="q3-3" value="a"><span>ดีมาก</span></label>
+                                <label><input type="radio" name="q3-3" value="b"><span>พอใช้</span></label>
+                                <label><input type="radio" name="q3-3" value="c"><span>75</span></label>
+                                <label><input type="radio" name="q3-3" value="d"><span>ERROR</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-3-3"></div>
                         </div>
-                        <button class="btn-check" onclick="checkQuiz(3)">ตรวจคำตอบ</button>
+                        <button class="btn-check" onclick="checkQuiz(3)">✓ ตรวจคำตอบ</button>
                         <div class="quiz-result" id="result-3"></div>
                     </div>
                 </div>
 
                 <div class="lesson-nav">
-                    <button class="btn-prev" onclick="navigateToLesson('2')">← บทที่ 2</button>
-                    <button class="btn-next" onclick="navigateToLesson('4')">บทที่ 4 →</button>
+                    <button class="btn-nav btn-prev" onclick="navigateToLesson('2')">← บทที่ 2</button>
+                    <button class="btn-nav btn-next" onclick="navigateToLesson('4')">บทที่ 4: การสร้างกราฟ →</button>
                 </div>
             </section>
 
 
-            <!-- Lesson 4: การสร้างกราฟ -->
+            <!-- ==================== LESSON 4 ==================== -->
             <section class="lesson-section" id="lesson4">
-                <div class="lesson-header">
-                    <span class="lesson-number">บทที่ 4</span>
-                    <h2>การสร้างกราฟและแผนภูมิ</h2>
-                    <p class="lesson-objective">วัตถุประสงค์: นักเรียนสามารถเลือกชนิดกราฟที่เหมาะสมและสร้างกราฟจากข้อมูลได้</p>
+                <div class="lesson-hero">
+                    <div class="lesson-hero-content">
+                        <span class="lesson-badge">บทที่ 4</span>
+                        <h1>การสร้างกราฟและแผนภูมิ</h1>
+                        <p>แปลงข้อมูลตัวเลขให้เป็นภาพที่สวยงามและเข้าใจง่าย</p>
+                    </div>
+                    <div class="lesson-hero-icon">📊</div>
                 </div>
 
-                <div class="lesson-content">
-                    <div class="content-block">
-                        <h3>📌 ทำไมต้องสร้างกราฟ?</h3>
-                        <p>กราฟช่วยแปลงข้อมูลตัวเลขที่ซับซ้อนให้เป็นภาพที่เข้าใจง่าย ช่วยในการวิเคราะห์ เปรียบเทียบ และนำเสนอข้อมูลได้อย่างมีประสิทธิภาพ</p>
-                        
-                        <div class="highlight-box">
-                            <h4>💡 ประโยชน์ของกราฟ</h4>
-                            <ul>
-                                <li>เห็นแนวโน้มของข้อมูลได้ชัดเจน</li>
-                                <li>เปรียบเทียบข้อมูลได้ง่าย</li>
-                                <li>นำเสนอข้อมูลได้น่าสนใจกว่าตาราง</li>
-                                <li>ช่วยตัดสินใจจากข้อมูล</li>
-                            </ul>
-                        </div>
+                <div class="lesson-objectives">
+                    <h3>🎯 เมื่อเรียนจบบทนี้ นักเรียนจะสามารถ</h3>
+                    <div class="objectives-list">
+                        <div class="objective-item"><span class="obj-check">✓</span> อธิบายประโยชน์ของการใช้กราฟนำเสนอข้อมูลได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> เลือกชนิดกราฟที่เหมาะสมกับข้อมูลได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> สร้างกราฟจากข้อมูลใน Excel ได้</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> ปรับแต่งกราฟให้สวยงามเพื่อนำเสนอได้</div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 ชนิดของกราฟที่ใช้บ่อย</h3>
-                        <div class="chart-types">
-                            <div class="chart-card">
-                                <div class="chart-icon">📊</div>
-                                <h4>กราฟแท่ง (Bar/Column Chart)</h4>
-                                <p><strong>ใช้เมื่อ:</strong> ต้องการเปรียบเทียบข้อมูลแต่ละรายการ</p>
-                                <p><strong>ตัวอย่าง:</strong> เปรียบเทียบคะแนนสอบแต่ละวิชา</p>
+                <!-- ทำไมต้องสร้างกราฟ -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">🤔</span>
+                        <h2>ทำไมต้องสร้างกราฟ?</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="comparison-box">
+                            <div class="compare-item">
+                                <h4>❌ แบบไม่มีกราฟ</h4>
+                                <p>"คะแนนสอบวิชาคณิต: สมชาย 85, สมหญิง 72, มานะ 91, วิไล 68, ปรีชา 76, สุภา 88..."</p>
+                                <div class="compare-verdict">😵 อ่านแล้วสับสน เปรียบเทียบยาก</div>
                             </div>
-                            <div class="chart-card">
-                                <div class="chart-icon">📈</div>
-                                <h4>กราฟเส้น (Line Chart)</h4>
-                                <p><strong>ใช้เมื่อ:</strong> ต้องการแสดงแนวโน้มที่เปลี่ยนแปลงตามเวลา</p>
-                                <p><strong>ตัวอย่าง:</strong> คะแนนสอบที่เปลี่ยนแปลงในแต่ละเดือน</p>
-                            </div>
-                            <div class="chart-card">
-                                <div class="chart-icon">🥧</div>
-                                <h4>กราฟวงกลม (Pie Chart)</h4>
-                                <p><strong>ใช้เมื่อ:</strong> ต้องการแสดงสัดส่วนของข้อมูลรวม</p>
-                                <p><strong>ตัวอย่าง:</strong> สัดส่วนเกรดของนักเรียนในชั้น</p>
-                            </div>
-                            <div class="chart-card">
-                                <div class="chart-icon">📉</div>
-                                <h4>กราฟพื้นที่ (Area Chart)</h4>
-                                <p><strong>ใช้เมื่อ:</strong> ต้องการเน้นปริมาณที่เปลี่ยนแปลง</p>
-                                <p><strong>ตัวอย่าง:</strong> จำนวนนักเรียนที่เข้าเรียนแต่ละสัปดาห์</p>
+                            <div class="compare-item good">
+                                <h4>✅ แบบมีกราฟ</h4>
+                                <div class="mini-chart">
+                                    <div class="bar" style="height:85%"><span>85</span></div>
+                                    <div class="bar" style="height:72%"><span>72</span></div>
+                                    <div class="bar" style="height:91%"><span>91</span></div>
+                                    <div class="bar" style="height:68%"><span>68</span></div>
+                                    <div class="bar" style="height:76%"><span>76</span></div>
+                                    <div class="bar" style="height:88%"><span>88</span></div>
+                                </div>
+                                <div class="compare-verdict">😊 เห็นภาพทันที เปรียบเทียบง่าย</div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-
-                    <div class="content-block">
-                        <h3>📌 ขั้นตอนการสร้างกราฟ</h3>
-                        <div class="steps-container">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <div class="step-content">
-                                    <h4>เตรียมข้อมูล</h4>
-                                    <p>จัดข้อมูลเป็นตาราง มีหัวคอลัมน์ชัดเจน ไม่มีแถวว่างคั่น</p>
+                <!-- ชนิดของกราฟ -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">📈</span>
+                        <h2>ชนิดของกราฟที่ใช้บ่อย</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-types-grid">
+                            <div class="chart-type-card">
+                                <div class="chart-preview bar-chart-preview">
+                                    <div class="cp-bar" style="height:60%"></div>
+                                    <div class="cp-bar" style="height:80%"></div>
+                                    <div class="cp-bar" style="height:45%"></div>
+                                    <div class="cp-bar" style="height:90%"></div>
+                                    <div class="cp-bar" style="height:70%"></div>
                                 </div>
+                                <h4>📊 กราฟแท่ง (Column/Bar)</h4>
+                                <p><strong>ใช้เมื่อ:</strong> เปรียบเทียบข้อมูลแต่ละรายการ</p>
+                                <p><strong>ตัวอย่าง:</strong> เปรียบเทียบคะแนนแต่ละวิชา, ยอดขายแต่ละเดือน</p>
                             </div>
-                            <div class="step">
-                                <span class="step-number">2</span>
-                                <div class="step-content">
-                                    <h4>เลือกข้อมูล</h4>
-                                    <p>ลากเลือก (Drag) ข้อมูลทั้งหมดที่ต้องการสร้างกราฟ รวมถึงหัวคอลัมน์</p>
+                            <div class="chart-type-card">
+                                <div class="chart-preview line-chart-preview">
+                                    <svg viewBox="0 0 100 50" class="line-svg">
+                                        <polyline points="5,40 20,30 40,35 60,20 80,15 95,10" fill="none" stroke="#217346" stroke-width="2"/>
+                                        <circle cx="5" cy="40" r="2" fill="#217346"/>
+                                        <circle cx="20" cy="30" r="2" fill="#217346"/>
+                                        <circle cx="40" cy="35" r="2" fill="#217346"/>
+                                        <circle cx="60" cy="20" r="2" fill="#217346"/>
+                                        <circle cx="80" cy="15" r="2" fill="#217346"/>
+                                        <circle cx="95" cy="10" r="2" fill="#217346"/>
+                                    </svg>
                                 </div>
+                                <h4>📈 กราฟเส้น (Line)</h4>
+                                <p><strong>ใช้เมื่อ:</strong> แสดงแนวโน้มการเปลี่ยนแปลงตามเวลา</p>
+                                <p><strong>ตัวอย่าง:</strong> คะแนนสอบที่เพิ่มขึ้นทุกเดือน, อุณหภูมิรายวัน</p>
                             </div>
-                            <div class="step">
-                                <span class="step-number">3</span>
-                                <div class="step-content">
-                                    <h4>เลือกชนิดกราฟ</h4>
-                                    <p>ไปที่แท็บ Insert → เลือกชนิดกราฟที่เหมาะสม (Column, Line, Pie, etc.)</p>
+                            <div class="chart-type-card">
+                                <div class="chart-preview pie-chart-preview">
+                                    <svg viewBox="0 0 60 60" class="pie-svg">
+                                        <circle cx="30" cy="30" r="25" fill="#217346" stroke="white" stroke-width="0.5"/>
+                                        <path d="M30,30 L30,5 A25,25 0 0,1 55,30 Z" fill="#2ea85a"/>
+                                        <path d="M30,30 L55,30 A25,25 0 0,1 42,52 Z" fill="#68d391"/>
+                                        <path d="M30,30 L42,52 A25,25 0 0,1 18,52 Z" fill="#9ae6b4"/>
+                                    </svg>
                                 </div>
+                                <h4>🥧 กราฟวงกลม (Pie)</h4>
+                                <p><strong>ใช้เมื่อ:</strong> แสดงสัดส่วนของข้อมูลรวม</p>
+                                <p><strong>ตัวอย่าง:</strong> สัดส่วนเกรดของนักเรียน, % งบประมาณแต่ละหมวด</p>
                             </div>
-                            <div class="step">
-                                <span class="step-number">4</span>
-                                <div class="step-content">
-                                    <h4>ปรับแต่งกราฟ</h4>
-                                    <p>ใส่ชื่อกราฟ, ปรับสี, เพิ่ม Label, จัดตำแหน่ง Legend</p>
+                            <div class="chart-type-card">
+                                <div class="chart-preview area-chart-preview">
+                                    <svg viewBox="0 0 100 50" class="area-svg">
+                                        <polygon points="5,45 20,35 40,30 60,20 80,25 95,15 95,45 5,45" fill="rgba(33,115,70,0.3)" stroke="#217346" stroke-width="1.5"/>
+                                    </svg>
                                 </div>
+                                <h4>📉 กราฟพื้นที่ (Area)</h4>
+                                <p><strong>ใช้เมื่อ:</strong> เน้นปริมาณรวมที่เปลี่ยนแปลงตามเวลา</p>
+                                <p><strong>ตัวอย่าง:</strong> จำนวนนักเรียนสะสม, ยอดเงินออมรายเดือน</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 การปรับแต่งกราฟ (Chart Elements)</h3>
-                        <div class="table-container">
-                            <table class="info-table">
-                                <thead>
-                                    <tr>
-                                        <th>องค์ประกอบ</th>
-                                        <th>คำอธิบาย</th>
-                                        <th>วิธีปรับ</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Chart Title</strong></td>
-                                        <td>ชื่อกราฟ</td>
-                                        <td>คลิกที่ชื่อ → พิมพ์แก้ไข</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Axis Labels</strong></td>
-                                        <td>ชื่อแกน X และ Y</td>
-                                        <td>Chart Elements (+) → Axis Titles</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Legend</strong></td>
-                                        <td>คำอธิบายสัญลักษณ์</td>
-                                        <td>Chart Elements (+) → Legend</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Data Labels</strong></td>
-                                        <td>แสดงค่าตัวเลขบนกราฟ</td>
-                                        <td>Chart Elements (+) → Data Labels</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Gridlines</strong></td>
-                                        <td>เส้นตาราง</td>
-                                        <td>Chart Elements (+) → Gridlines</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <!-- ขั้นตอนสร้างกราฟ -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">🛠️</span>
+                        <h2>ขั้นตอนการสร้างกราฟ</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="steps-modern">
+                            <div class="step-item"><div class="step-num">1</div><div class="step-content"><h4>เตรียมข้อมูล</h4><p>จัดข้อมูลเป็นตาราง มีหัวคอลัมน์ชัดเจน ไม่มีแถวว่างคั่นกลาง และตรวจสอบว่าข้อมูลถูกต้อง</p></div></div>
+                            <div class="step-item"><div class="step-num">2</div><div class="step-content"><h4>เลือกข้อมูล (Select)</h4><p>ลากเลือกข้อมูลทั้งหมดที่ต้องการสร้างกราฟ <strong>รวมถึงหัวคอลัมน์ด้วย</strong> (Excel จะใช้เป็น Label)</p></div></div>
+                            <div class="step-item"><div class="step-num">3</div><div class="step-content"><h4>แทรกกราฟ</h4><p>ไปที่แท็บ <strong>Insert</strong> → เลือกชนิดกราฟที่เหมาะสม (Column, Line, Pie, etc.) → เลือก Sub-type ที่ต้องการ</p></div></div>
+                            <div class="step-item"><div class="step-num">4</div><div class="step-content"><h4>ปรับแต่งกราฟ</h4><p>คลิกที่กราฟ → ใช้ปุ่ม <strong>+</strong> (Chart Elements) เพิ่มชื่อ, Label, Legend → ใช้ปุ่ม 🖌️ เปลี่ยนสีและ Style</p></div></div>
+                        </div>
+
+                        <h4 style="margin-top:25px;">องค์ประกอบของกราฟ (Chart Elements)</h4>
+                        <div class="chart-elements-grid">
+                            <div class="ce-item"><span class="ce-icon">📝</span><strong>Chart Title</strong><p>ชื่อกราฟ — อธิบายว่ากราฟนี้แสดงอะไร</p></div>
+                            <div class="ce-item"><span class="ce-icon">↕️</span><strong>Axis Title</strong><p>ชื่อแกน X (แนวนอน) และ Y (แนวตั้ง)</p></div>
+                            <div class="ce-item"><span class="ce-icon">🏷️</span><strong>Data Labels</strong><p>แสดงค่าตัวเลขบนกราฟ</p></div>
+                            <div class="ce-item"><span class="ce-icon">📋</span><strong>Legend</strong><p>คำอธิบายสัญลักษณ์สีต่างๆ</p></div>
+                            <div class="ce-item"><span class="ce-icon">📏</span><strong>Gridlines</strong><p>เส้นตารางช่วยอ่านค่า</p></div>
+                            <div class="ce-item"><span class="ce-icon">📊</span><strong>Data Table</strong><p>แสดงตารางข้อมูลใต้กราฟ</p></div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Quiz บทที่ 4 -->
-                    <div class="quiz-section">
-                        <h3>📝 แบบฝึกหัดท้ายบท</h3>
+                <!-- Quiz 4 -->
+                <div class="content-card quiz-card">
+                    <div class="card-header">
+                        <span class="card-icon">📝</span>
+                        <h2>แบบฝึกหัดท้ายบทที่ 4</h2>
+                    </div>
+                    <div class="card-body">
                         <div class="quiz-item" data-quiz="4-1">
                             <p class="quiz-question">1. กราฟชนิดใดเหมาะสำหรับแสดงแนวโน้มที่เปลี่ยนแปลงตามเวลา?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q4-1" value="a"> กราฟแท่ง (Bar Chart)</label>
-                                <label><input type="radio" name="q4-1" value="b"> กราฟเส้น (Line Chart)</label>
-                                <label><input type="radio" name="q4-1" value="c"> กราฟวงกลม (Pie Chart)</label>
-                                <label><input type="radio" name="q4-1" value="d"> กราฟพื้นที่ (Area Chart)</label>
+                                <label><input type="radio" name="q4-1" value="a"><span>กราฟแท่ง (Bar Chart)</span></label>
+                                <label><input type="radio" name="q4-1" value="b"><span>กราฟเส้น (Line Chart)</span></label>
+                                <label><input type="radio" name="q4-1" value="c"><span>กราฟวงกลม (Pie Chart)</span></label>
+                                <label><input type="radio" name="q4-1" value="d"><span>กราฟพื้นที่ (Area Chart)</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-4-1"></div>
                         </div>
                         <div class="quiz-item" data-quiz="4-2">
-                            <p class="quiz-question">2. ก่อนสร้างกราฟ ต้องทำอะไรก่อน?</p>
+                            <p class="quiz-question">2. ก่อนสร้างกราฟ สิ่งแรกที่ต้องทำคืออะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q4-2" value="a"> ใส่สูตร</label>
-                                <label><input type="radio" name="q4-2" value="b"> เลือกข้อมูลที่ต้องการ</label>
-                                <label><input type="radio" name="q4-2" value="c"> ตั้งชื่อกราฟ</label>
-                                <label><input type="radio" name="q4-2" value="d"> เลือกสีกราฟ</label>
+                                <label><input type="radio" name="q4-2" value="a"><span>ตั้งชื่อกราฟ</span></label>
+                                <label><input type="radio" name="q4-2" value="b"><span>เลือก (Select) ข้อมูลที่ต้องการ</span></label>
+                                <label><input type="radio" name="q4-2" value="c"><span>เลือกสีกราฟ</span></label>
+                                <label><input type="radio" name="q4-2" value="d"><span>ใส่ Legend</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-4-2"></div>
                         </div>
                         <div class="quiz-item" data-quiz="4-3">
                             <p class="quiz-question">3. กราฟวงกลม (Pie Chart) เหมาะสำหรับแสดงข้อมูลแบบใด?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q4-3" value="a"> แนวโน้มการเปลี่ยนแปลง</label>
-                                <label><input type="radio" name="q4-3" value="b"> การเปรียบเทียบ</label>
-                                <label><input type="radio" name="q4-3" value="c"> สัดส่วนของข้อมูลรวม</label>
-                                <label><input type="radio" name="q4-3" value="d"> ความสัมพันธ์ของข้อมูล</label>
+                                <label><input type="radio" name="q4-3" value="a"><span>แนวโน้มการเปลี่ยนแปลง</span></label>
+                                <label><input type="radio" name="q4-3" value="b"><span>การเปรียบเทียบรายการ</span></label>
+                                <label><input type="radio" name="q4-3" value="c"><span>สัดส่วนของข้อมูลรวม</span></label>
+                                <label><input type="radio" name="q4-3" value="d"><span>ความสัมพันธ์ของ 2 ตัวแปร</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-4-3"></div>
                         </div>
-                        <button class="btn-check" onclick="checkQuiz(4)">ตรวจคำตอบ</button>
+                        <button class="btn-check" onclick="checkQuiz(4)">✓ ตรวจคำตอบ</button>
                         <div class="quiz-result" id="result-4"></div>
                     </div>
                 </div>
 
                 <div class="lesson-nav">
-                    <button class="btn-prev" onclick="navigateToLesson('3')">← บทที่ 3</button>
-                    <button class="btn-next" onclick="navigateToLesson('5')">บทที่ 5 →</button>
+                    <button class="btn-nav btn-prev" onclick="navigateToLesson('3')">← บทที่ 3</button>
+                    <button class="btn-nav btn-next" onclick="navigateToLesson('5')">บทที่ 5: ประยุกต์ใช้จริง →</button>
                 </div>
             </section>
 
 
-            <!-- Lesson 5: การประยุกต์ใช้กับการเรียน -->
+            <!-- ==================== LESSON 5 ==================== -->
             <section class="lesson-section" id="lesson5">
-                <div class="lesson-header">
-                    <span class="lesson-number">บทที่ 5</span>
-                    <h2>การประยุกต์ใช้ Excel กับการเรียน</h2>
-                    <p class="lesson-objective">วัตถุประสงค์: นักเรียนสามารถนำความรู้ Excel ไปใช้ในชีวิตการเรียนจริงได้</p>
+                <div class="lesson-hero">
+                    <div class="lesson-hero-content">
+                        <span class="lesson-badge">บทที่ 5</span>
+                        <h1>ประยุกต์ใช้ Excel กับการเรียน</h1>
+                        <p>ลงมือทำโปรเจกต์จริง 5 ชิ้นที่ใช้ได้ทันทีในชีวิตการเรียน</p>
+                    </div>
+                    <div class="lesson-hero-icon">🎓</div>
                 </div>
 
-                <div class="lesson-content">
-                    <div class="content-block">
-                        <h3>📌 โปรเจกต์ที่ 1: ตารางบันทึกคะแนนสอบ</h3>
-                        <p>สร้างตารางบันทึกคะแนนสอบทุกวิชา พร้อมคำนวณค่าเฉลี่ยและเกรดอัตโนมัติ</p>
+                <div class="lesson-objectives">
+                    <h3>🎯 โปรเจกต์ที่จะได้ทำ</h3>
+                    <div class="objectives-list">
+                        <div class="objective-item"><span class="obj-check">✓</span> โปรเจกต์ 1: ตารางบันทึกคะแนนสอบพร้อมตัดเกรดอัตโนมัติ</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> โปรเจกต์ 2: ตารางเวลาเรียนประจำสัปดาห์</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> โปรเจกต์ 3: สมุดบันทึกรายรับ-รายจ่ายส่วนตัว</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> โปรเจกต์ 4: วิเคราะห์ผลการเรียนด้วยกราฟ</div>
+                        <div class="objective-item"><span class="obj-check">✓</span> โปรเจกต์ 5: แบบฟอร์มเก็บข้อมูลวิจัย (IS)</div>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="content-card project-card">
+                    <div class="card-header">
+                        <span class="card-icon">📋</span>
+                        <h2>โปรเจกต์ 1: ตารางบันทึกคะแนนสอบ</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>สร้างตารางบันทึกคะแนนสอบทุกวิชา พร้อมคำนวณเปอร์เซ็นต์ ค่าเฉลี่ย และตัดเกรดอัตโนมัติ</p>
                         
-                        <div class="project-detail">
-                            <h4>ขั้นตอนการทำ:</h4>
+                        <div class="project-steps">
+                            <h4>📝 ขั้นตอนการทำ:</h4>
                             <ol>
-                                <li>สร้างตารางพร้อมหัวคอลัมน์: วิชา, คะแนนเต็ม, คะแนนที่ได้, เปอร์เซ็นต์, เกรด</li>
-                                <li>ป้อนข้อมูลวิชาและคะแนน</li>
+                                <li>สร้างตาราง: วิชา | คะแนนเต็ม | คะแนนที่ได้ | เปอร์เซ็นต์ | เกรด</li>
+                                <li>ป้อนชื่อวิชาและคะแนนเต็ม</li>
                                 <li>ใช้สูตร <code>=C2/B2*100</code> คำนวณเปอร์เซ็นต์</li>
-                                <li>ใช้ฟังก์ชัน IF ซ้อนกันเพื่อตัดเกรด:</li>
+                                <li>ใช้ IF ซ้อนกันตัดเกรด</li>
+                                <li>ใช้ AVERAGE คำนวณค่าเฉลี่ย</li>
+                                <li>ใช้ Conditional Formatting เน้นเกรดสี</li>
                             </ol>
-                            <div class="code-block">
-                                <code>=IF(D2>=80,"A",IF(D2>=70,"B",IF(D2>=60,"C",IF(D2>=50,"D","F"))))</code>
+                        </div>
+
+                        <div class="code-block-modern">
+                            <div class="code-label">สูตรตัดเกรด</div>
+                            <code>=IF(D2>=80,"A",IF(D2>=70,"B",IF(D2>=60,"C",IF(D2>=50,"D","F"))))</code>
+                        </div>
+
+                        <div class="excel-mock-full">
+                            <div class="excel-mock-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="mock-title">คะแนนสอบ.xlsx</span></div>
+                            <div class="excel-mock-body">
+                                <div class="mock-row mock-header-row"><span>วิชา</span><span>เต็ม</span><span>ได้</span><span>%</span><span>เกรด</span></div>
+                                <div class="mock-row"><span>คณิตศาสตร์</span><span>100</span><span>85</span><span>85%</span><span class="grade-a">A</span></div>
+                                <div class="mock-row"><span>วิทยาศาสตร์</span><span>100</span><span>72</span><span>72%</span><span class="grade-b">B</span></div>
+                                <div class="mock-row"><span>ภาษาอังกฤษ</span><span>100</span><span>68</span><span>68%</span><span class="grade-c">C</span></div>
+                                <div class="mock-row"><span>ภาษาไทย</span><span>100</span><span>78</span><span>78%</span><span class="grade-b">B</span></div>
+                                <div class="mock-row"><span>สังคมศึกษา</span><span>100</span><span>90</span><span>90%</span><span class="grade-a">A</span></div>
+                                <div class="mock-row mock-footer"><span>เฉลี่ย</span><span></span><span class="formula">78.6</span><span class="formula">78.6%</span><span class="grade-b">B</span></div>
                             </div>
-                            <p class="code-explain">ถ้าเปอร์เซ็นต์ ≥ 80 = A, ≥ 70 = B, ≥ 60 = C, ≥ 50 = D, ต่ำกว่า 50 = F</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 โปรเจกต์ที่ 2: ตารางเวลาเรียน (Schedule)</h3>
-                        <p>ออกแบบตารางเรียนประจำสัปดาห์ที่สวยงามและใช้งานได้จริง</p>
+                <!-- Project 2 -->
+                <div class="content-card project-card">
+                    <div class="card-header">
+                        <span class="card-icon">📅</span>
+                        <h2>โปรเจกต์ 2: ตารางเวลาเรียนประจำสัปดาห์</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>ออกแบบตารางเรียนที่สวยงาม พิมพ์ติดโต๊ะหรือเก็บไว้ดูในมือถือ</p>
                         
-                        <div class="project-detail">
-                            <h4>เทคนิคที่ใช้:</h4>
+                        <div class="project-steps">
+                            <h4>🎨 เทคนิคที่ใช้:</h4>
                             <ul>
-                                <li><strong>Merge & Center:</strong> รวมเซลล์สำหรับหัวตาราง</li>
-                                <li><strong>Fill Color:</strong> ใช้สีแยกแต่ละวิชา</li>
-                                <li><strong>Borders:</strong> ใส่เส้นขอบให้ตาราง</li>
-                                <li><strong>Conditional Formatting:</strong> เน้นวิชาที่มีสอบ</li>
-                                <li><strong>Print Area:</strong> กำหนดพื้นที่พิมพ์เป็น A4</li>
+                                <li><strong>Merge & Center:</strong> รวมเซลล์สำหรับหัวตาราง "ตารางเรียน ม.4/1"</li>
+                                <li><strong>Fill Color:</strong> ใช้สีแยกแต่ละวิชาให้ดูง่าย (เช่น คณิต=เหลือง, วิทย์=เขียว)</li>
+                                <li><strong>Borders:</strong> ใส่เส้นขอบให้ตารางดูเรียบร้อย</li>
+                                <li><strong>Column Width:</strong> ปรับความกว้างให้พอดีกับข้อความ</li>
+                                <li><strong>Print Area:</strong> กำหนดพื้นที่พิมพ์เป็น A4 แนวนอน</li>
                             </ul>
                         </div>
 
-                        <div class="excel-preview">
-                            <table class="excel-table schedule-table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="row-num">1</td>
-                                        <td class="header-cell" colspan="6">ตารางเรียนประจำสัปดาห์</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">2</td>
-                                        <td class="header-cell">คาบ/วัน</td>
-                                        <td class="header-cell">จันทร์</td>
-                                        <td class="header-cell">อังคาร</td>
-                                        <td class="header-cell">พุธ</td>
-                                        <td class="header-cell">พฤหัสฯ</td>
-                                        <td class="header-cell">ศุกร์</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">3</td>
-                                        <td>08:30-09:20</td>
-                                        <td class="cell-math">คณิต</td>
-                                        <td class="cell-thai">ภาษาไทย</td>
-                                        <td class="cell-eng">อังกฤษ</td>
-                                        <td class="cell-sci">วิทย์</td>
-                                        <td class="cell-math">คณิต</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="row-num">4</td>
-                                        <td>09:20-10:10</td>
-                                        <td class="cell-sci">วิทย์</td>
-                                        <td class="cell-math">คณิต</td>
-                                        <td class="cell-thai">ภาษาไทย</td>
-                                        <td class="cell-eng">อังกฤษ</td>
-                                        <td class="cell-soc">สังคม</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="excel-mock-full">
+                            <div class="excel-mock-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="mock-title">ตารางเรียน.xlsx</span></div>
+                            <div class="excel-mock-body schedule-body">
+                                <div class="mock-row mock-header-row"><span>คาบ/วัน</span><span>จันทร์</span><span>อังคาร</span><span>พุธ</span><span>พฤหัสฯ</span><span>ศุกร์</span></div>
+                                <div class="mock-row"><span>08:30</span><span class="sch-math">คณิต</span><span class="sch-thai">ไทย</span><span class="sch-eng">อังกฤษ</span><span class="sch-sci">วิทย์</span><span class="sch-math">คณิต</span></div>
+                                <div class="mock-row"><span>09:20</span><span class="sch-sci">วิทย์</span><span class="sch-math">คณิต</span><span class="sch-thai">ไทย</span><span class="sch-eng">อังกฤษ</span><span class="sch-soc">สังคม</span></div>
+                                <div class="mock-row"><span>10:20</span><span class="sch-eng">อังกฤษ</span><span class="sch-sci">วิทย์</span><span class="sch-soc">สังคม</span><span class="sch-thai">ไทย</span><span class="sch-sci">วิทย์</span></div>
+                                <div class="mock-row"><span>11:10</span><span class="sch-soc">สังคม</span><span class="sch-eng">อังกฤษ</span><span class="sch-math">คณิต</span><span class="sch-soc">สังคม</span><span class="sch-thai">ไทย</span></div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-
-                    <div class="content-block">
-                        <h3>📌 โปรเจกต์ที่ 3: บันทึกรายรับ-รายจ่าย</h3>
-                        <p>สร้างระบบบันทึกการเงินส่วนตัว ช่วยวางแผนการใช้จ่ายอย่างมีระเบียบ</p>
+                <!-- Project 3 -->
+                <div class="content-card project-card">
+                    <div class="card-header">
+                        <span class="card-icon">💰</span>
+                        <h2>โปรเจกต์ 3: บันทึกรายรับ-รายจ่าย</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>สร้างระบบจัดการเงินส่วนตัว เพื่อรู้ว่าเงินไปไหน และวางแผนออมเงินได้</p>
                         
-                        <div class="project-detail">
-                            <h4>สูตรที่ใช้:</h4>
+                        <div class="project-steps">
+                            <h4>🧮 สูตรที่ใช้:</h4>
                             <div class="formula-list">
-                                <div class="formula-item">
-                                    <code>=SUM(C2:C31)</code>
-                                    <span>รวมรายรับทั้งเดือน</span>
-                                </div>
-                                <div class="formula-item">
-                                    <code>=SUM(D2:D31)</code>
-                                    <span>รวมรายจ่ายทั้งเดือน</span>
-                                </div>
-                                <div class="formula-item">
-                                    <code>=E1-D2</code>
-                                    <span>คงเหลือ (ยอดสะสม)</span>
-                                </div>
-                                <div class="formula-item">
-                                    <code>=SUMIF(B:B,"อาหาร",D:D)</code>
-                                    <span>รวมรายจ่ายหมวด "อาหาร"</span>
-                                </div>
+                                <div class="formula-row"><code>=SUM(D2:D31)</code><span>รวมรายจ่ายทั้งเดือน</span></div>
+                                <div class="formula-row"><code>=SUM(C2:C31)</code><span>รวมรายรับทั้งเดือน</span></div>
+                                <div class="formula-row"><code>=C32-D32</code><span>เงินคงเหลือ (รายรับ - รายจ่าย)</span></div>
+                                <div class="formula-row"><code>=SUMIF(B:B,"อาหาร",D:D)</code><span>รวมเฉพาะหมวด "อาหาร"</span></div>
+                                <div class="formula-row"><code>=SUMIF(B:B,"เดินทาง",D:D)</code><span>รวมเฉพาะหมวด "เดินทาง"</span></div>
+                            </div>
+                        </div>
+
+                        <div class="info-banner">
+                            <div class="info-banner-icon">💡</div>
+                            <div class="info-banner-content">
+                                <strong>เทคนิคเพิ่ม:</strong> ใช้ Data Validation สร้าง Dropdown List สำหรับหมวดหมู่ (อาหาร, เดินทาง, อุปกรณ์การเรียน, บันเทิง) เพื่อป้อนข้อมูลได้เร็วขึ้นและไม่ผิดพลาด
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 โปรเจกต์ที่ 4: วิเคราะห์ผลการเรียนด้วยกราฟ</h3>
-                        <p>สร้างกราฟเปรียบเทียบคะแนนสอบแต่ละวิชา เพื่อวิเคราะห์จุดแข็ง-จุดอ่อน</p>
+                <!-- Project 4 -->
+                <div class="content-card project-card">
+                    <div class="card-header">
+                        <span class="card-icon">📊</span>
+                        <h2>โปรเจกต์ 4: วิเคราะห์ผลเรียนด้วยกราฟ</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>สร้างกราฟวิเคราะห์จุดแข็ง-จุดอ่อนของตัวเอง และดูพัฒนาการคะแนน</p>
                         
-                        <div class="project-detail">
-                            <h4>สิ่งที่จะได้เรียนรู้:</h4>
+                        <div class="project-steps">
+                            <h4>📈 กราฟที่จะสร้าง:</h4>
+                            <div class="project-charts">
+                                <div class="pc-item"><span class="pc-icon">📊</span><strong>กราฟแท่ง:</strong> เปรียบเทียบคะแนนแต่ละวิชา → เห็นวิชาที่แข็ง/อ่อน</div>
+                                <div class="pc-item"><span class="pc-icon">📈</span><strong>กราฟเส้น:</strong> คะแนนย้อนหลัง 4 ครั้ง → เห็นพัฒนาการ</div>
+                                <div class="pc-item"><span class="pc-icon">🥧</span><strong>กราฟวงกลม:</strong> สัดส่วนเวลาที่ใช้ทบทวนแต่ละวิชา</div>
+                                <div class="pc-item"><span class="pc-icon">📉</span><strong>Sparklines:</strong> กราฟเล็กในเซลล์ แสดงแนวโน้มอย่างรวดเร็ว</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="content-card project-card">
+                    <div class="card-header">
+                        <span class="card-icon">🔬</span>
+                        <h2>โปรเจกต์ 5: แบบฟอร์มวิจัย (โครงงาน IS)</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>ออกแบบแบบสำรวจ เก็บข้อมูล วิเคราะห์ผล และสร้างกราฟสรุป สำหรับวิชาโครงงาน IS</p>
+                        
+                        <div class="project-steps">
+                            <h4>🔧 เทคนิคขั้นสูงที่ใช้:</h4>
                             <ul>
-                                <li>สร้างกราฟแท่งเปรียบเทียบคะแนนแต่ละวิชา</li>
-                                <li>สร้างกราฟเส้นแสดงพัฒนาการของคะแนน</li>
-                                <li>สร้างกราฟวงกลมแสดงสัดส่วนเวลาเรียนแต่ละวิชา</li>
-                                <li>ปรับแต่งกราฟให้สวยงามเพื่อใส่ในรายงาน</li>
+                                <li><strong>Data Validation:</strong> สร้าง Dropdown List เพื่อจำกัดตัวเลือกคำตอบ (เช่น มากที่สุด, มาก, ปานกลาง, น้อย, น้อยที่สุด)</li>
+                                <li><strong>COUNTIF:</strong> นับจำนวนผู้ตอบแต่ละตัวเลือก</li>
+                                <li><strong>เปอร์เซ็นต์:</strong> คำนวณ % ของแต่ละตัวเลือก</li>
+                                <li><strong>กราฟ:</strong> สร้างกราฟแท่ง/วงกลมสรุปผลสำรวจ</li>
+                                <li><strong>Print Layout:</strong> จัดหน้าให้สวยงามสำหรับพิมพ์ส่งอาจารย์</li>
                             </ul>
                         </div>
-                    </div>
 
-                    <div class="content-block">
-                        <h3>📌 โปรเจกต์ที่ 5: แบบฟอร์มรายงานวิจัย</h3>
-                        <p>ออกแบบแบบฟอร์มสำหรับเก็บข้อมูลวิจัย (สำหรับวิชาโครงงาน IS)</p>
-                        
-                        <div class="project-detail">
-                            <h4>เทคนิคขั้นสูง:</h4>
-                            <ul>
-                                <li><strong>Data Validation:</strong> สร้าง Dropdown list เพื่อจำกัดตัวเลือก</li>
-                                <li><strong>COUNTIF:</strong> นับจำนวนคำตอบแต่ละตัวเลือก</li>
-                                <li><strong>กราฟ:</strong> สร้างกราฟสรุปผลสำรวจ</li>
-                                <li><strong>Print Layout:</strong> จัดหน้าสำหรับพิมพ์ส่งอาจารย์</li>
-                            </ul>
+                        <div class="code-block-modern">
+                            <div class="code-label">สูตรนับคำตอบ</div>
+                            <code>=COUNTIF(C2:C100,"มากที่สุด")</code>
+                        </div>
+                        <div class="code-block-modern">
+                            <div class="code-label">สูตรคำนวณเปอร์เซ็นต์</div>
+                            <code>=COUNTIF(C2:C100,"มากที่สุด")/COUNTA(C2:C100)*100</code>
                         </div>
                     </div>
+                </div>
 
-                    <div class="content-block">
-                        <h3>📌 สรุปเทคนิคสำคัญที่ควรจำ</h3>
-                        <div class="summary-grid">
-                            <div class="summary-item">
-                                <span class="summary-icon">⚡</span>
-                                <h4>AutoFill</h4>
-                                <p>ลากมุมขวาล่างของเซลล์เพื่อกรอกข้อมูลอัตโนมัติ (ลำดับเลข, วัน, เดือน)</p>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-icon">🔒</span>
-                                <h4>Freeze Panes</h4>
-                                <p>ตรึงแถว/คอลัมน์ ไม่ให้เลื่อนหายไป (View → Freeze Panes)</p>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-icon">📋</span>
-                                <h4>Paste Special</h4>
-                                <p>วางเฉพาะค่า สูตร หรือรูปแบบ (Ctrl+Alt+V)</p>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-icon">🔍</span>
-                                <h4>Find & Replace</h4>
-                                <p>ค้นหาและแทนที่ข้อมูล (Ctrl+H)</p>
-                            </div>
+                <!-- เทคนิคสำคัญ -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <span class="card-icon">⭐</span>
+                        <h2>เทคนิคสำคัญที่ควรจำ</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="pro-tips-grid">
+                            <div class="pro-tip"><span class="pt-icon">⚡</span><h4>AutoFill</h4><p>ลากมุมขวาล่างของเซลล์เพื่อกรอกลำดับอัตโนมัติ</p></div>
+                            <div class="pro-tip"><span class="pt-icon">🔒</span><h4>Freeze Panes</h4><p>ตรึงแถวหัวตารางไม่ให้หายเมื่อเลื่อน (View → Freeze Panes)</p></div>
+                            <div class="pro-tip"><span class="pt-icon">📋</span><h4>Paste Special</h4><p>วางเฉพาะค่า/สูตร/รูปแบบ (Ctrl+Alt+V)</p></div>
+                            <div class="pro-tip"><span class="pt-icon">🔍</span><h4>Find & Replace</h4><p>ค้นหาและแทนที่ข้อมูลทีเดียวทั้ง Sheet (Ctrl+H)</p></div>
+                            <div class="pro-tip"><span class="pt-icon">🛡️</span><h4>Protect Sheet</h4><p>ล็อคเซลล์ป้องกันแก้ไขผิดพลาด (Review → Protect)</p></div>
+                            <div class="pro-tip"><span class="pt-icon">📸</span><h4>Snapshot Chart</h4><p>Copy กราฟไปวางใน Word/PowerPoint ได้ทันที</p></div>
                         </div>
                     </div>
+                </div>
 
-
-                    <!-- Quiz บทที่ 5 -->
-                    <div class="quiz-section">
-                        <h3>📝 แบบฝึกหัดท้ายบท</h3>
+                <!-- Quiz 5 -->
+                <div class="content-card quiz-card">
+                    <div class="card-header">
+                        <span class="card-icon">📝</span>
+                        <h2>แบบฝึกหัดท้ายบทที่ 5</h2>
+                    </div>
+                    <div class="card-body">
                         <div class="quiz-item" data-quiz="5-1">
-                            <p class="quiz-question">1. สูตร =IF(D2>=80,"A",IF(D2>=70,"B","C")) ถ้า D2 = 73 ผลลัพธ์คืออะไร?</p>
+                            <p class="quiz-question">1. =IF(D2>=80,"A",IF(D2>=70,"B","C")) ถ้า D2 = 73 ผลลัพธ์คืออะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q5-1" value="a"> A</label>
-                                <label><input type="radio" name="q5-1" value="b"> B</label>
-                                <label><input type="radio" name="q5-1" value="c"> C</label>
-                                <label><input type="radio" name="q5-1" value="d"> ERROR</label>
+                                <label><input type="radio" name="q5-1" value="a"><span>A</span></label>
+                                <label><input type="radio" name="q5-1" value="b"><span>B</span></label>
+                                <label><input type="radio" name="q5-1" value="c"><span>C</span></label>
+                                <label><input type="radio" name="q5-1" value="d"><span>ERROR</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-5-1"></div>
                         </div>
                         <div class="quiz-item" data-quiz="5-2">
                             <p class="quiz-question">2. ฟังก์ชัน SUMIF ใช้ทำอะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q5-2" value="a"> รวมค่าทั้งหมด</label>
-                                <label><input type="radio" name="q5-2" value="b"> รวมค่าตามเงื่อนไข</label>
-                                <label><input type="radio" name="q5-2" value="c"> นับจำนวนตามเงื่อนไข</label>
-                                <label><input type="radio" name="q5-2" value="d"> หาค่าเฉลี่ยตามเงื่อนไข</label>
+                                <label><input type="radio" name="q5-2" value="a"><span>รวมค่าทั้งหมดในช่วง</span></label>
+                                <label><input type="radio" name="q5-2" value="b"><span>รวมค่าเฉพาะที่ตรงตามเงื่อนไข</span></label>
+                                <label><input type="radio" name="q5-2" value="c"><span>นับจำนวนตามเงื่อนไข</span></label>
+                                <label><input type="radio" name="q5-2" value="d"><span>หาค่าเฉลี่ยตามเงื่อนไข</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-5-2"></div>
                         </div>
                         <div class="quiz-item" data-quiz="5-3">
                             <p class="quiz-question">3. Data Validation ใช้ทำอะไร?</p>
                             <div class="quiz-options">
-                                <label><input type="radio" name="q5-3" value="a"> ตรวจสอบสูตร</label>
-                                <label><input type="radio" name="q5-3" value="b"> จำกัดข้อมูลที่สามารถป้อนได้</label>
-                                <label><input type="radio" name="q5-3" value="c"> สร้างกราฟ</label>
-                                <label><input type="radio" name="q5-3" value="d"> เรียงลำดับข้อมูล</label>
+                                <label><input type="radio" name="q5-3" value="a"><span>ตรวจสอบสูตร</span></label>
+                                <label><input type="radio" name="q5-3" value="b"><span>จำกัดข้อมูลที่สามารถป้อนในเซลล์ได้</span></label>
+                                <label><input type="radio" name="q5-3" value="c"><span>สร้างกราฟ</span></label>
+                                <label><input type="radio" name="q5-3" value="d"><span>เรียงลำดับข้อมูล</span></label>
                             </div>
                             <div class="quiz-feedback" id="feedback-5-3"></div>
                         </div>
-                        <button class="btn-check" onclick="checkQuiz(5)">ตรวจคำตอบ</button>
+                        <button class="btn-check" onclick="checkQuiz(5)">✓ ตรวจคำตอบ</button>
                         <div class="quiz-result" id="result-5"></div>
                     </div>
                 </div>
 
                 <div class="lesson-nav">
-                    <button class="btn-prev" onclick="navigateToLesson('4')">← บทที่ 4</button>
-                    <button class="btn-next btn-complete" onclick="showCompletion()">🎉 เรียนจบทุกบท!</button>
+                    <button class="btn-nav btn-prev" onclick="navigateToLesson('4')">← บทที่ 4</button>
+                    <button class="btn-nav btn-next btn-complete" onclick="showCompletion()">🎉 เรียนจบทุกบทแล้ว!</button>
                 </div>
             </section>
-
 
         </div>
     </main>
@@ -1146,22 +1512,13 @@
         <div class="modal-content">
             <div class="modal-icon">🎓</div>
             <h2>ยินดีด้วย!</h2>
-            <p>คุณได้เรียนจบบทเรียน Microsoft Excel ครบทั้ง 5 บทแล้ว</p>
+            <p>คุณเรียนจบบทเรียน Microsoft Excel ครบทั้ง 5 บทแล้ว</p>
             <div class="modal-stats">
-                <div class="stat">
-                    <span class="stat-number" id="totalCorrect">0</span>
-                    <span class="stat-label">คำตอบที่ถูก</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">15</span>
-                    <span class="stat-label">คำถามทั้งหมด</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" id="scorePercent">0%</span>
-                    <span class="stat-label">คะแนนรวม</span>
-                </div>
+                <div class="stat"><span class="stat-number" id="totalCorrect">0</span><span class="stat-label">ตอบถูก</span></div>
+                <div class="stat"><span class="stat-number">15</span><span class="stat-label">ทั้งหมด</span></div>
+                <div class="stat"><span class="stat-number" id="scorePercent">0%</span><span class="stat-label">คะแนน</span></div>
             </div>
-            <button class="btn-start" onclick="closeModal()">ปิด</button>
+            <button class="btn-primary" onclick="closeModal()">ปิด</button>
         </div>
     </div>
 
@@ -1170,7 +1527,7 @@
         <div class="container">
             <p class="footer-author">จัดทำโดย <strong>ครูธีพงษ์ เขาทอง</strong></p>
             <p>บทเรียนออนไลน์: การใช้งาน Microsoft Excel | สำหรับนักเรียนระดับมัธยมศึกษา</p>
-            <p class="footer-note">พัฒนาเพื่อการศึกษา | สามารถนำไปใช้ประกอบการเรียนการสอนได้</p>
+            <p class="footer-note">พัฒนาเพื่อการศึกษา © 2569</p>
         </div>
     </footer>
 

@@ -1,232 +1,140 @@
-// ===== QUIZ ANSWERS =====
+// ===== QUIZ DATA =====
 const quizAnswers = {
-    '1-1': 'b', // Cell
-    '1-2': 'c', // ตัวอักษรภาษาอังกฤษ
-    '1-3': 'a', // Ctrl + S
-    '2-1': 'b', // ตัวเลข (Number)
-    '2-2': 'b', // Tab
-    '2-3': 'b', // Merge & Center
-    '3-1': 'b', // = (เท่ากับ)
-    '3-2': 'b', // หาค่าเฉลี่ย
-    '3-3': 'b', // พอใช้
-    '4-1': 'b', // กราฟเส้น (Line Chart)
-    '4-2': 'b', // เลือกข้อมูลที่ต้องการ
-    '4-3': 'c', // สัดส่วนของข้อมูลรวม
-    '5-1': 'b', // B
-    '5-2': 'b', // รวมค่าตามเงื่อนไข
-    '5-3': 'b'  // จำกัดข้อมูลที่สามารถป้อนได้
+    '1-1':'b','1-2':'c','1-3':'a',
+    '2-1':'b','2-2':'b','2-3':'b',
+    '3-1':'b','3-2':'b','3-3':'b',
+    '4-1':'b','4-2':'b','4-3':'c',
+    '5-1':'b','5-2':'b','5-3':'b'
 };
-
 const quizExplanations = {
-    '1-1': 'Cell (เซลล์) คือจุดตัดระหว่างแถว (Row) และคอลัมน์ (Column)',
-    '1-2': 'คอลัมน์ใน Excel ใช้ตัวอักษรภาษาอังกฤษ A, B, C, ... Z, AA, AB, ...',
-    '1-3': 'Ctrl + S เป็นปุ่มลัดสำหรับบันทึกไฟล์ (Save)',
-    '2-1': 'ข้อมูลตัวเลขจะถูกจัดชิดขวาอัตโนมัติ ส่วนข้อความจะชิดซ้าย',
-    '2-2': 'Tab ใช้ยืนยันข้อมูลและเลื่อนไปคอลัมน์ถัดไป ส่วน Enter จะเลื่อนลงแถวถัดไป',
-    '2-3': 'Merge & Center ใช้รวมเซลล์หลายเซลล์เข้าด้วยกันและจัดกลาง',
-    '3-1': 'สูตรทุกสูตรใน Excel ต้องขึ้นต้นด้วยเครื่องหมาย = เสมอ',
-    '3-2': 'AVERAGE ใช้หาค่าเฉลี่ยของข้อมูล ส่วน SUM หาผลรวม',
-    '3-3': 'เพราะ 75 < 80 ดังนั้นเงื่อนไข A1>=80 เป็นเท็จ จึงแสดง "พอใช้"',
-    '4-1': 'กราฟเส้น (Line Chart) เหมาะสำหรับแสดงแนวโน้มการเปลี่ยนแปลงตามเวลา',
-    '4-2': 'ต้องเลือก (Select) ข้อมูลที่ต้องการก่อน แล้วจึงไปที่ Insert → Chart',
-    '4-3': 'กราฟวงกลม (Pie Chart) แสดงสัดส่วนของแต่ละส่วนเทียบกับทั้งหมด',
-    '5-1': '73 >= 70 เป็นจริง ดังนั้นผลลัพธ์คือ "B"',
-    '5-2': 'SUMIF ใช้รวมค่าเฉพาะที่ตรงตามเงื่อนไขที่กำหนด',
-    '5-3': 'Data Validation ใช้จำกัดชนิดหรือค่าของข้อมูลที่สามารถป้อนลงในเซลล์ได้'
+    '1-1':'Cell (เซลล์) คือจุดตัดระหว่าง Row และ Column',
+    '1-2':'คอลัมน์ใช้ตัวอักษรภาษาอังกฤษ A, B, C... Z, AA, AB...',
+    '1-3':'Ctrl + S เป็นปุ่มลัดบันทึกไฟล์ (Save)',
+    '2-1':'ข้อมูลตัวเลขจะจัดชิดขวาอัตโนมัติ ส่วนข้อความชิดซ้าย',
+    '2-2':'Tab ยืนยันข้อมูลแล้วเลื่อนไปคอลัมน์ถัดไป (ขวา)',
+    '2-3':'Merge & Center รวมหลายเซลล์เข้าด้วยกันและจัดกลาง',
+    '3-1':'สูตรทุกสูตรต้องขึ้นต้นด้วย = เสมอ',
+    '3-2':'AVERAGE หาค่าเฉลี่ย, SUM หาผลรวม',
+    '3-3':'75 < 80 เงื่อนไขเป็นเท็จ จึงแสดง "พอใช้"',
+    '4-1':'Line Chart แสดงแนวโน้มการเปลี่ยนแปลงตามเวลาได้ดีที่สุด',
+    '4-2':'ต้อง Select ข้อมูลก่อน แล้วจึง Insert Chart',
+    '4-3':'Pie Chart แสดงสัดส่วนของแต่ละส่วนเทียบกับทั้งหมด',
+    '5-1':'73 >= 70 เป็นจริง ดังนั้นผลลัพธ์คือ "B"',
+    '5-2':'SUMIF รวมค่าเฉพาะที่ตรงตามเงื่อนไข',
+    '5-3':'Data Validation จำกัดชนิด/ค่าข้อมูลที่ป้อนในเซลล์ได้'
 };
 
-// ===== STATE MANAGEMENT =====
+// ===== STATE =====
 let currentLesson = 'home';
 let completedLessons = new Set();
 let quizScores = {};
 
-
 // ===== NAVIGATION =====
-function navigateToLesson(lessonId) {
-    // Hide all sections
-    document.querySelectorAll('.lesson-section').forEach(section => {
-        section.classList.remove('active');
-    });
+function navigateToLesson(id) {
+    document.querySelectorAll('.lesson-section').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(id === 'home' ? 'home' : 'lesson' + id);
+    if (target) target.classList.add('active');
 
-    // Show target section
-    const targetId = lessonId === 'home' ? 'home' : `lesson${lessonId}`;
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-        targetSection.classList.add('active');
-    }
-
-    // Update nav buttons
     document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.lesson === lessonId) {
-            btn.classList.add('active');
-        }
+        btn.classList.toggle('active', btn.dataset.lesson === id);
     });
 
-    // Mark previous lesson as completed
-    if (currentLesson !== 'home' && lessonId !== currentLesson) {
+    if (currentLesson !== 'home' && id !== currentLesson) {
         completedLessons.add(currentLesson);
     }
-
-    currentLesson = lessonId;
+    currentLesson = id;
     updateProgress();
-    
-    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ===== PROGRESS BAR =====
+// ===== PROGRESS =====
 function updateProgress() {
-    const totalLessons = 5;
-    const completed = completedLessons.size;
-    const percentage = Math.round((completed / totalLessons) * 100);
-    
-    const progressFill = document.getElementById('progressFill');
-    const progressText = document.getElementById('progressText');
-    
-    if (progressFill) {
-        progressFill.style.width = percentage + '%';
-    }
-    if (progressText) {
-        progressText.textContent = `ความคืบหน้า: ${percentage}% (${completed}/${totalLessons} บท)`;
-    }
+    const pct = Math.round((completedLessons.size / 5) * 100);
+    const fill = document.getElementById('progressFill');
+    const text = document.getElementById('progressText');
+    if (fill) fill.style.width = pct + '%';
+    if (text) text.textContent = completedLessons.size + ' / 5 บท';
 }
 
-
-// ===== QUIZ CHECKING =====
+// ===== QUIZ =====
 function checkQuiz(lessonNum) {
     let correct = 0;
-    let total = 3;
-    
-    for (let i = 1; i <= total; i++) {
-        const quizKey = `${lessonNum}-${i}`;
-        const selectedOption = document.querySelector(`input[name="q${quizKey}"]:checked`);
-        const feedbackEl = document.getElementById(`feedback-${quizKey}`);
-        
-        if (!feedbackEl) continue;
-        
-        if (!selectedOption) {
-            feedbackEl.className = 'quiz-feedback incorrect';
-            feedbackEl.textContent = '⚠️ กรุณาเลือกคำตอบ';
-            feedbackEl.style.display = 'block';
+    for (let i = 1; i <= 3; i++) {
+        const key = lessonNum + '-' + i;
+        const sel = document.querySelector('input[name="q' + key + '"]:checked');
+        const fb = document.getElementById('feedback-' + key);
+        if (!fb) continue;
+        if (!sel) {
+            fb.className = 'quiz-feedback incorrect';
+            fb.textContent = '⚠️ กรุณาเลือกคำตอบ';
+            fb.style.display = 'block';
             continue;
         }
-        
-        const isCorrect = selectedOption.value === quizAnswers[quizKey];
-        
-        if (isCorrect) {
+        const ok = sel.value === quizAnswers[key];
+        if (ok) {
             correct++;
-            feedbackEl.className = 'quiz-feedback correct';
-            feedbackEl.textContent = `✅ ถูกต้อง! ${quizExplanations[quizKey]}`;
+            fb.className = 'quiz-feedback correct';
+            fb.textContent = '✅ ถูกต้อง! ' + quizExplanations[key];
         } else {
-            feedbackEl.className = 'quiz-feedback incorrect';
-            feedbackEl.textContent = `❌ ไม่ถูกต้อง — ${quizExplanations[quizKey]}`;
+            fb.className = 'quiz-feedback incorrect';
+            fb.textContent = '❌ ไม่ถูก — ' + quizExplanations[key];
         }
-        feedbackEl.style.display = 'block';
-        
-        // Highlight options
-        const options = document.querySelectorAll(`input[name="q${quizKey}"]`);
-        options.forEach(opt => {
-            const label = opt.parentElement;
-            label.style.borderColor = '';
-            label.style.background = '';
-            
-            if (opt.value === quizAnswers[quizKey]) {
-                label.style.borderColor = '#38a169';
-                label.style.background = '#f0fff4';
-            } else if (opt.checked && !isCorrect) {
-                label.style.borderColor = '#e53e3e';
-                label.style.background = '#fff5f5';
-            }
+        fb.style.display = 'block';
+        document.querySelectorAll('input[name="q' + key + '"]').forEach(opt => {
+            const lbl = opt.parentElement;
+            lbl.style.borderColor = '';
+            lbl.style.background = '';
+            if (opt.value === quizAnswers[key]) { lbl.style.borderColor = '#38a169'; lbl.style.background = '#f0fff4'; }
+            else if (opt.checked && !ok) { lbl.style.borderColor = '#e53e3e'; lbl.style.background = '#fff5f5'; }
         });
     }
-    
-    // Store score
     quizScores[lessonNum] = correct;
-    
-    // Show result
-    const resultEl = document.getElementById(`result-${lessonNum}`);
-    if (resultEl) {
-        resultEl.classList.add('show');
-        
-        if (correct === total) {
-            resultEl.className = 'quiz-result show good';
-            resultEl.textContent = `🎉 ยอดเยี่ยม! คุณตอบถูกทั้ง ${total} ข้อ!`;
-        } else if (correct >= 2) {
-            resultEl.className = 'quiz-result show average';
-            resultEl.textContent = `👍 ดีมาก! คุณตอบถูก ${correct}/${total} ข้อ`;
-        } else {
-            resultEl.className = 'quiz-result show poor';
-            resultEl.textContent = `📖 คุณตอบถูก ${correct}/${total} ข้อ — ลองทบทวนเนื้อหาอีกครั้งนะ`;
-        }
+    const res = document.getElementById('result-' + lessonNum);
+    if (res) {
+        res.classList.add('show');
+        if (correct === 3) { res.className = 'quiz-result show good'; res.textContent = '🎉 ยอดเยี่ยม! ถูกทั้ง 3 ข้อ!'; }
+        else if (correct >= 2) { res.className = 'quiz-result show average'; res.textContent = '👍 ดีมาก! ถูก ' + correct + '/3 ข้อ'; }
+        else { res.className = 'quiz-result show poor'; res.textContent = '📖 ถูก ' + correct + '/3 — ลองทบทวนอีกครั้ง'; }
     }
-    
-    // Mark lesson as completed when quiz is done
     completedLessons.add(String(lessonNum));
     updateProgress();
 }
 
-
-// ===== COMPLETION MODAL =====
+// ===== COMPLETION =====
 function showCompletion() {
-    // Mark lesson 5 as completed
     completedLessons.add('5');
     updateProgress();
-    
-    // Calculate total score
-    let totalCorrect = 0;
-    for (let key in quizScores) {
-        totalCorrect += quizScores[key];
-    }
-    
-    const totalQuestions = 15;
-    const percentage = Math.round((totalCorrect / totalQuestions) * 100);
-    
-    document.getElementById('totalCorrect').textContent = totalCorrect;
-    document.getElementById('scorePercent').textContent = percentage + '%';
-    
-    // Show modal
+    let total = 0;
+    for (let k in quizScores) total += quizScores[k];
+    document.getElementById('totalCorrect').textContent = total;
+    document.getElementById('scorePercent').textContent = Math.round(total / 15 * 100) + '%';
     document.getElementById('completionModal').classList.add('show');
 }
-
 function closeModal() {
     document.getElementById('completionModal').classList.remove('show');
 }
 
-// ===== EVENT LISTENERS =====
-document.addEventListener('DOMContentLoaded', function() {
-    // Nav button clicks
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            navigateToLesson(this.dataset.lesson);
-        });
-    });
-    
-    // Close modal on overlay click
-    document.getElementById('completionModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeModal();
-        }
-    });
-    
-    // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
-    
-    // Initialize progress
-    updateProgress();
-});
+// ===== THEME =====
+function toggleTheme() {
+    document.body.classList.toggle('dark');
+    const btn = document.querySelector('.theme-toggle');
+    btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
 
-// ===== SMOOTH SCROLL FOR INTERNAL NAVIGATION =====
-document.addEventListener('click', function(e) {
-    if (e.target.matches('a[href^="#"]')) {
-        e.preventDefault();
-        const target = document.querySelector(e.target.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Nav clicks
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', function() { navigateToLesson(this.dataset.lesson); });
+    });
+    // Modal close
+    document.getElementById('completionModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    // Theme restore
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+        document.querySelector('.theme-toggle').textContent = '☀️';
     }
+    updateProgress();
 });
